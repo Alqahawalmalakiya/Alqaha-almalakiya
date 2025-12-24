@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأدوات والعدة الفاخرة | القهوة الملكية</title>
+    <meta name="description" content="نوفر أرقى عدة قهوجيين بجدة تشمل دلال ملكية مذهبة، فناجين فخمة، مباخر عود ملكي، وحوافظ شاي وقهوة حديثة. نضمن لك نظافة وفخامة الأدوات في مناسبتكم بجدة.">
+    <meta name="keywords" content="دلال ملكية جدة, عدة قهوجيين بجدة, فناجين مذهبة, مباخر ملكية, أدوات ضيافة جدة, تأجير دلال قهوة, دلال رسلان بجدة">
+    
+    <style>
+        :root { --primary-color: #8B5A2B; --gold-color: #B8860B; --light-bg: #fdfbf7; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light-bg); line-height: 1.8; }
+        header { background: white; padding: 15px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
+                nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 10px; 
+            margin-top: 10px; 
+            border-top: 1px solid #eee; 
+            padding: 15px 5px; 
+            flex-wrap: wrap; 
+        }
+
+        nav a { 
+            color: var(--primary-color); 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 13px; 
+            padding: 8px 16px; 
+            background: #ffffff; /* لون خلفية الزر */
+            border-radius: 12px; /* زوايا دائرية */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* الـتضليل (الظل) */
+            border: 1px solid #f0f0f0; 
+            transition: 0.3s all ease;
+        }
+
+        nav a:hover { 
+            background: var(--primary-color); 
+            color: #fff; 
+            transform: translateY(-2px); /* حركة بسيطة للأعلى عند اللمس */
+            box-shadow: 0 6px 15px rgba(139, 90, 43, 0.2); 
+        }
+        
+        .logo-container img { width: 140px; }
+        nav { display: flex; justify-content: center; gap: 20px; margin-top: 10px; }
+        nav a { color: var(--primary-color); text-decoration: none; font-weight: 700; font-size: 14px; }
+        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+        .back-btn-container { text-align: left; margin-bottom: 15px; }
+        .back-btn { padding: 6px 15px; border: 1px solid var(--primary-color); color: var(--primary-color); text-decoration: none; border-radius: 20px; font-size: 13px; }
+        
+        .about-section { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); text-align: center; margin-bottom: 30px; }
+        .about-section h2 { color: var(--gold-color); margin-bottom: 20px; font-size: 22px; }
+        
+        .section-title {
+            color: var(--primary-color);
+            text-align: right;
+            margin: 30px 0 15px 0;
+            font-size: 18px;
+            border-right: 4px solid var(--gold-color);
+            padding-right: 10px;
+            background: linear-gradient(to left, #f9f6f2, transparent);
+        }
+
+        /* --- تعديل الشبكة لتناسب صورتين في الجوال --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* صورتين في الصف بشكل افتراضي */
+            gap: 12px; /* مسافة بسيطة لترك مساحة للصور */
+            margin-bottom: 20px;
+        }
+
+        /* للشاشات الكبيرة (كمبيوتر) تظهر 4 صور في الصف */
+        @media (min-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+        .gallery-item:active img { transform: scale(1.1); } /* تأثير بسيط عند الضغط في الجوال */
+
+        footer { background: #f4f1ed; padding: 40px 20px; text-align: center; margin-top: 40px; border-top: 1px solid #e0dcd8; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container"><img src="https://i.postimg.cc/xdrK6YXb/alqhwt-almklyt-mkanhntdgh-ʿmdwntttajntwahlawahghwyhmytj-(2).png" alt="القهوة الملكية"></div>
+        <nav><a href="index.html">الرئيسية</a><a href="index.html#services">خدماتنا</a><a href="https://wa.me/966536895975">اتصل بنا</a></nav>
+    </header>
+
+    <div class="container">
+        <div class="back-btn-container"><a href="index.html" class="back-btn">← عودة</a></div>
+        
+        <div class="about-section">
+            <h2>الأدوات والعدة الفاخرة</h2>
+
+            <h3 class="section-title">عدة التقديم الفاخرة</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://i.postimg.cc/B6wqyzHV/JPb6OUPvjtg-Mvz6Bo-Jv-AUuv-Mk-NJLacn-WV7g-UCBx5.webp"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/28Wzc26Q/900x909-1-GO-MTc1ODc5ODc1Nz-U1NDQ5MDA4Mjc4Nw-jpg-700.webp"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/3xM2VSFP/1JMozv-I0Kt7ea-YEEjs-ANT6en-Qrx-Deu-Oh-GELa0dl1.webp"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/TPnLzgcS/eb0cca1c-bda7-4e6f-b0a2-22f5fb1035f1-thumbnail-1000x1000-70.jpg"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/cLnr3wPW/28fea603-f3af-439f-89f1-a63fb3571dab-1000x1000-q-Yq5k-D7ms-U1DFyz3Epr-B5FTxc-Gbo0TQz-Zx0l-OBIX.jpg"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/3RKRz6N3/07f9f6a4-58f8-4924-9c70-eb7aa4e2a3d1-1000x1000-0Mddm89Vam-VPINC4Bgh-Hlmjwjo-UA3on-CJEEUk-VRr.webp"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/L5W8Y8T9/97eb5a3f-c65b-4340-b02e-38957465c9d0-1000x1000-If-R5Aqj-Mj-QWmd-WYPt-YZvyd-JB16Fm-ED5Wx-Z9Akfpb.webp"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/pX9TNKWY/46493unit-dwythrricckod6zh.jpg"></div>
+                 <div class="gallery-item"><img src="https://i.postimg.cc/90HjvwJp/a1e5b0ce-8ad5-4e6a-ab98-0a79c53dffd3-1000x1000-2CWAkcj6mx-YTo-Sd-Yt3MWkjny49X8NLf-HN9gs8z-Vf.webp"></div>
+            </div>
+
+            <h3 class="section-title">عدة تحضير القهوة والشاهي</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://i.postimg.cc/ZnvhQF8n/saht1833-a.jpg"></div>
+                <div class="gallery-item"><img src="https://i.postimg.cc/bJ6Q5qmn/b29668af-5379-4e6d-9175-8578744b8df3.jpg"></div>
+    
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>القهوة الملكية - قهوجي جدة</strong></p>
+        <div style="display: flex; justify-content: center; gap: 15px; margin: 15px 0;">
+            <a href="https://wa.me/966536895975" target="_blank"><img src="https://i.postimg.cc/vmjHGWsc/download.jpg" style="width: 35px; border-radius: 50%;"></a>
+            <a href="https://www.tiktok.com/@c01off4e1" target="_blank"><img src="https://i.postimg.cc/qqGT6K9z/images.png" style="width: 35px; border-radius: 50%;"></a>
+            <a href="https://www.instagram.com/c01off4e1_" target="_blank"><img src="https://i.postimg.cc/W4pJdmCz/download.jpg" style="width: 35px; border-radius: 50%;"></a>
+        </div>
+        <p style="font-size: 13px;">© 2025 جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>

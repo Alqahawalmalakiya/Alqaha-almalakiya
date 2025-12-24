@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أنواع الضيافة والتقديمات | القهوة الملكية</title>
+    <meta name="description" content="اكتشف قائمة تقديمات القهوة الملكية بجدة. نوفر قهوة عربية أصيلة، شاي بجميع أنواعه، زنجبيل، قشر، وحلى فاخر للمناسبات والزواجات بأسعار تنافسية في جدة.">
+    <meta name="keywords" content="تقديمات ضيافة جدة, مشروبات قهوجيين, قهوة عربية جدة, شاي مناسبات, تمر فاخر جدة, قائمة ضيافة الزواجات, مشروبات ساخنة للمناسبات">
+    
+    <style>
+        :root { --primary-color: #8B5A2B; --gold-color: #B8860B; --light-bg: #fdfbf7; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light-bg); line-height: 1.8; }
+        
+        header { background: white; padding: 15px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
+        .logo-container img { width: 140px; }
+        nav { display: flex; justify-content: center; gap: 20px; margin-top: 10px; }
+        nav a { color: var(--primary-color); text-decoration: none; font-weight: 700; font-size: 14px; }
+        
+                nav { 
+            display: flex; 
+            justify-content: center; 
+            gap: 10px; 
+            margin-top: 10px; 
+            border-top: 1px solid #eee; 
+            padding: 15px 5px; 
+            flex-wrap: wrap; 
+        }
+
+        nav a { 
+            color: var(--primary-color); 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 13px; 
+            padding: 8px 16px; 
+            background: #ffffff; /* لون خلفية الزر */
+            border-radius: 12px; /* زوايا دائرية */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* الـتضليل (الظل) */
+            border: 1px solid #f0f0f0; 
+            transition: 0.3s all ease;
+        }
+
+        nav a:hover { 
+            background: var(--primary-color); 
+            color: #fff; 
+            transform: translateY(-2px); /* حركة بسيطة للأعلى عند اللمس */
+            box-shadow: 0 6px 15px rgba(139, 90, 43, 0.2); 
+        }
+        
+        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+        .back-btn-container { text-align: left; margin-bottom: 15px; }
+        .back-btn { padding: 6px 15px; border: 1px solid var(--primary-color); color: var(--primary-color); text-decoration: none; border-radius: 20px; font-size: 13px; }
+        
+        .main-box { background: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); text-align: center; margin-bottom: 30px; }
+        .main-box h1 { color: var(--gold-color); margin-bottom: 10px; font-size: 24px; }
+        .intro-text { color: #666; font-size: 15px; margin-bottom: 30px; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 20px 0;
+            background: #fff;
+            padding: 10px;
+            border-radius: 12px;
+            border-right: 5px solid var(--gold-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .section-header h2 { color: var(--primary-color); font-size: 19px; margin-right: 10px; }
+
+        /* --- كود تحريك المشروبات الجديد --- */
+        .slider-wrapper {
+            overflow: hidden;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .slider-track {
+            display: flex;
+            width: calc(250px * 8); /* عرض الصور مكرر لضمان الاستمرارية */
+            animation: scrollDrinks 20s linear infinite;
+        }
+        .slider-track:hover { animation-play-state: paused; } /* يتوقف عند اللمس */
+
+        @keyframes scrollDrinks {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(250px * 4)); } /* يتحرك بمقدار نصف العناصر */
+        }
+
+        .drink-card {
+            width: 230px;
+            flex-shrink: 0;
+            margin: 0 10px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+        /* ---------------------------------- */
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .items-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        }
+
+        .item-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+        .item-card:hover { transform: translateY(-5px); }
+        
+        .image-box {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            background: #f9f9f9;
+        }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        
+        .item-info { padding: 10px; text-align: center; }
+        .item-info h3 { font-size: 14px; color: var(--primary-color); font-weight: 700; }
+        .item-info p { font-size: 12px; color: #888; margin-top: 4px; }
+
+        footer { background: #f4f1ed; padding: 40px 20px; text-align: center; margin-top: 50px; border-top: 1px solid #e0dcd8; }
+        .social-icons { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
+        .social-icons img { width: 35px; border-radius: 50%; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container"><img src="https://i.postimg.cc/xdrK6YXb/alqhwt-almklyt-mkanhntdgh-ʿmdwntttajntwahlawahghwyhmytj-(2).png" alt="القهوة الملكية"></div>
+        <nav><a href="index.html">الرئيسية</a><a href="index.html#services">خدماتنا</a><a href="https://wa.me/966536895975">اطلب الضيافة</a></nav>
+    </header>
+
+    <div class="container">
+        <div class="back-btn-container"><a href="index.html" class="back-btn">← عودة للرئيسية</a></div>
+        
+        <div class="main-box">
+            <h1>قائمة التقديمات والضيافة</h1>
+            <p class="intro-text">نقدم لكم أجود أنواع المشروبات والحلى الشعبي والعصري بأيدي خبراء الضيافة.</p>
+
+            <div class="section-header">
+                <h2>المشروبات العربية الأصيلة</h2>
+            </div>
+
+            <div class="slider-wrapper">
+                <div class="slider-track">
+                    <div class="drink-card">
+                        <div class="image-box"><img src="https://i.postimg.cc/4yRNDd37/image.png" alt="القهوة السعودية"></div>
+                        <div class="item-info"><h3>شاهي سعودية ملكية</h3><p>نعناع</p></div>
+                    </div>
+
+                    <div class="drink-card">
+                        <div class="image-box"><img src="https://i.postimg.cc/25YGSdXL/image.png" alt="تقديمات"></div>
+                        <div class="item-info"><h3>شاي أخضر</h3><p>بالخلطة المدينية</p></div>
+                    </div>
+
+                    <div class="drink-card">
+                        <div class="image-box"><img src="https://i.postimg.cc/6qVRSFtk/image.png" alt="زنجبيل وقشر"></div>
+                        <div class="item-info"><h3>مشروبات دافئة</h3><p>زنجبيل</p></div>
+                    </div>
+
+                    <div class="drink-card">
+                        <div class="image-box"><img src="https://i.postimg.cc/T36NKXK2/image.png"></div>
+                        <div class="item-info"><h3>مشروبات دافئة</h3><p>رمان</p></div>
+                    </div>
+
+                    <div class="drink-card">
+                        <div class="image-box"><img src="https://i.postimg.cc/8CgKrgsL/image.png"></div>
+                        <div class="item-info"><h3>مشروبات دافئة</h3><p>أناناس</p></div>
+                    </div>
+
+                    <div class="drink-card">
+                        <div class="image-box"><img src="https://i.postimg.cc/fysSx5mp/image.png"></div>
+                        <div class="item-info"><h3>مشروبات دافئة</h3><p>قرفة</p></div>
+                    </div>
+                    <div class="drink-card">
+                        <div class="image-box"><img src="https://i.postimg.cc/8P1rcK1f/image.png"></div>
+                        <div class="item-info"><h3>مشروبات دافئة</h3><p>كركدية</p></div>
+                    </div>
+                </div>
+            </div>
+
+          
+
+            <div class="section-header">
+                <h2>الحلى والتمور والموالح</h2>
+            </div>
+            <div class="items-grid">
+                <div class="item-card">
+                    <div class="image-box"><img src="https://i.postimg.cc/bJ1p3Rp5/OIP.webp" alt="تمور فاخرة"></div>
+                    <div class="item-info"><h3>تمور محشية</h3><p>خلاص، سكري، ملكي</p></div>
+                </div>
+                <div class="item-card">
+                    <div class="image-box"><img src="https://i.postimg.cc/qBQ90FbG/treat-sweets-for-catering.jpg" alt="حلى قهوة"></div>
+                    <div class="item-info"><h3>حلى قهوة منوع</h3><p>صواني تقديم فاخرة</p></div>
+                </div>
+                <div class="item-card">
+                    <div class="image-box"><img src="https://i.postimg.cc/cLfh1g1y/OIP.webp" alt="موالح ومعجنات"></div>
+                    <div class="item-info"><h3>موالح وميني معجنات</h3><p>تشكيلة طازجة يومياً</p></div>
+                </div>
+                <div class="item-card">
+                    <div class="image-box"><img src="https://i.postimg.cc/SsRc9J4p/OIP.webp" alt="بسبوسة وحلى"></div>
+                    <div class="item-info"><h3>حلى شعبي</h3><p>لقيمات، بسبوسة، فواكه</p></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>القهوة الملكية - ضيافة جدة</strong></p>
+        <div class="social-icons">
+            <a href="https://wa.me/966536895975" target="_blank"><img src="https://i.postimg.cc/vmjHGWsc/download.jpg" alt="واتساب"></a>
+            <a href="https://www.tiktok.com/@c01off4e1" target="_blank"><img src="https://i.postimg.cc/qqGT6K9z/images.png" alt="تيك توك"></a>
+            <a href="https://www.instagram.com/c01off4e1_" target="_blank"><img src="https://i.postimg.cc/W4pJdmCz/download.jpg" alt="انستقرام"></a>
+        </div>
+        <p style="font-size: 13px; color: #777;">نخدمكم في جميع مناسباتكم بجدة بأعلى معايير الجودة</p>
+        <p style="font-size: 11px; margin-top: 10px; opacity: 0.5;">© 2025 القهوة الملكية</p>
+    </footer>
+
+</body>
+</html>
