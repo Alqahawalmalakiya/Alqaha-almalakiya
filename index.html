@@ -39,16 +39,26 @@
             padding: 0;
         }
 
-        .slider-container { width: 100%; overflow: hidden; padding: 20px 0; direction: ltr; }
+      .slider-container { width: 100%; overflow: hidden; padding: 20px 0; direction: ltr; }
+        
         .slider-track {
             display: flex;
-            width: calc(250px * 11); /* تم تعديل الرقم ليطابق عدد الصور 11 */
+            /* تم تعديل العرض ليتناسب مع المقاس الجديد 350px لكل صورة في السلايدر */
+            width: calc(300px * 6); 
             animation: scroll 25s linear infinite;
         }
-        .slide { width: 250px; padding: 0 10px; flex-shrink: 0; }
+
+        .slide { 
+            width: 300px; /* زيادة عرض الحاوية لتناسب النسبة الجديدة */
+            padding: 0 10px; 
+            flex-shrink: 0; 
+        }
+
         .slide img {
             width: 100%;
-            height: clamp(300px, 50vh, 400px); 
+            /* التعديل المطلوب: العرض 1080 والطول 1350 يعطي نسبة 4:5 */
+            aspect-ratio: 1080 / 1080; 
+            height: auto;
             object-fit: cover;
             border-radius: 15px;
             border: 2px solid var(--gold-color); 
