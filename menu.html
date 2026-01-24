@@ -8,6 +8,47 @@
     <meta name="keywords" content="تقديمات ضيافة جدة, مشروبات قهوجيين, قهوة عربية جدة, شاي مناسبات, تمر فاخر جدة, قائمة ضيافة الزواجات, مشروبات ساخنة للمناسبات">
     
     <style>
+
+        /* شريط التواصل السريع في أسفل الشاشة */
+.floating-contact-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(44, 30, 18, 0.95); /* لون بني ملكي */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    border-top: 2px solid #B8860B; /* خط ذهبي نحيف */
+    backdrop-filter: blur(5px);
+}
+
+.contact-item {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto 4px;
+}
+
+/* لمنع الشريط من تغطية آخر محتوى في الصفحة */
+body { 
+    padding-bottom: 70px !important; 
+}
+
+
+
         :root { --primary-color: #8B5A2B; --gold-color: #B8860B; --light-bg: #fdfbf7; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light-bg); line-height: 1.8; }
@@ -135,6 +176,29 @@
     </style>
 </head>
 <body>
+
+
+    <div class="floating-contact-bar">
+    <a href="tel:0536895975" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3059/3059502.png" alt="اتصال" style="filter: invert(1);">
+        اتصال
+    </a>
+
+    <a href="https://wa.me/966536895975" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="واتساب">
+        واتساب
+    </a>
+
+    <a href="https://www.tiktok.com/@c01off4e1" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="تيك توك" style="filter: invert(1);">
+        تيك توك
+    </a>
+
+    <a href="https://www.instagram.com/c01off4e1_" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="انستقرام">
+        انستقرام
+    </a>
+</div>
 
     <header>
         <div class="logo-container"><img src="https://i.postimg.cc/xdrK6YXb/alqhwt-almklyt-mkanhntdgh-ʿmdwntttajntwahlawahghwyhmytj-(2).png" alt="القهوة الملكية"></div>
