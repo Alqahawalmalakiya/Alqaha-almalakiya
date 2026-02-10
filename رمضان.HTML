@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Amiri:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-gold: #D4AF37;
+            --deep-bronze: #8C6239;
+            --soft-cream: #FFFCF5;
+            --rich-black: #1A120B;
+        }
+
+        body { font-family: 'Cairo', sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; padding: 20px; }
+
+        .sales-card {
+            width: 100%;
+            max-width: 450px;
+            background: var(--soft-cream);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
+        }
+
+        .hero-header {
+            background: var(--rich-black);
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .logo-img {
+            width: 140px;
+            filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
+            mix-blend-mode: screen; /* لمحاولة إخفاء الخلفية السوداء في اللوجو */
+        }
+
+        .offer-tag {
+            background: var(--royal-gold);
+            color: var(--rich-black);
+            font-weight: 900;
+            padding: 5px 20px;
+            border-radius: 0 0 15px 15px;
+            display: inline-block;
+            font-size: 14px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .content-body { padding: 30px 20px; }
+
+        h2 { color: var(--deep-bronze); margin: 0 0 10px; font-weight: 900; }
+
+        .experience-desc {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .menu-item {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--rich-black);
+            transition: 0.3s;
+        }
+
+        .menu-item:hover { border-color: var(--royal-gold); transform: translateY(-3px); }
+
+        .equipment-box {
+            background: linear-gradient(135deg, #fdf5e6 0%, #ffffff 100%);
+            border: 1.5px dashed var(--royal-gold);
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .equipment-box p { margin: 5px 0; font-size: 15px; color: var(--deep-bronze); font-weight: bold; }
+
+        .pricing-table {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .price-card {
+            flex: 1;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+        }
+
+        .price-card.ramadan {
+            background: #fffcf0;
+            border: 2px solid var(--royal-gold);
+            transform: scale(1.05);
+        }
+
+        .price-card.ramadan .label { color: #b8860b; font-weight: 900; }
+        .price-card .label { font-size: 13px; display: block; margin-bottom: 5px; }
+        .price-card .value { font-size: 24px; font-weight: 900; color: var(--rich-black); }
+
+        .cta-button {
+            background: var(--royal-gold);
+            color: var(--rich-black);
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 18px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(212,175,55,0.3);
+        }
+
+        .cta-button:hover { background: var(--rich-black); color: var(--royal-gold); }
+.floating-contact-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(44, 30, 18, 0.95); /* لون بني ملكي */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 15px rgba(0,0,0,0.3);
+    z-index: 9999;
+    border-top: 2px solid #B8860B; /* خط ذهبي نحيف */
+    backdrop-filter: blur(5px);
+}
+
+.contact-item {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-item img {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto 4px;
+}
+
+/* لمنع الشريط من تغطية آخر محتوى في الصفحة */
+body { 
+    padding-bottom: 70px !important; 
+}
+    </style>
+</head>
+<body>
+
+    <div class="floating-contact-bar">
+    <a href="tel:0536895975" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3059/3059502.png" alt="اتصال" style="filter: invert(1);">
+        اتصال
+    </a>
+
+    <a href="https://wa.me/966536895975" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="واتساب">
+        واتساب
+    </a>
+
+    <a href="https://www.tiktok.com/@c01off4e1" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="تيك توك" style="filter: invert(1);">
+        تيك توك
+    </a>
+
+    <a href="https://www.instagram.com/c01off4e1_" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="انستقرام">
+        انستقرام
+    </a>
+</div>
+
+<div class="sales-card">
+    <div class="hero-header">
+        <span class="offer-tag">عرض محدود</span>
+        <img src="https://i.postimg.cc/xdrK6YXb/alqhwt-almklyt-mkanhntdgh-cmdwntttajntwahlawahghwyhmytj-2.png" alt="لوجو القهوة الملكية" class="logo-img">
+    </div>
+
+    <div class="content-body">
+        <h2>ضيافة ملكية متكاملة</h2>
+        <p class="experience-desc">نعتني بضيوفكم بأعلى معايير الفخامة السعودية. بكج متكامل يجمع الأصالة والراحة.</p>
+
+<div class="menu-grid">
+            <div class="menu-item">☕ القهوة الملكية</div>
+            <div class="menu-item">🫖 شاي أحمر (حلو/مر)</div>
+            <div class="menu-item">☕ قهوة تركي</div>
+            <div class="menu-item">☕ كبتشينو</div>
+            <div class="menu-item">🟠 شاي كرك</div>
+            <div class="menu-item">🌿 شاي نعناع طائفي</div>
+            <div class="menu-item">🍍 زنجبيل أناناس</div>
+            <div class="menu-item">🌺 شاي كركديه</div>
+            <div class="menu-item">🍵 شاي أخضر بعد العشاء</div>
+
+            <div class="menu-item" style="grid-column: 1 / -1; background: var(--gold-color); color: rgb(212,175,55,0.3); font-weight: bold;">❄️ المشروبات الباردة</div>
+            <div class="menu-item">🍷 فيمتو رمضان</div>
+            <div class="menu-item">🍊 تانج منعش</div>
+            <div class="menu-item">🍋 عصير ليمون</div>
+            <div class="menu-item">🍍 عصير أناناس</div>
+            <div class="menu-item">🍇 عصير توت</div>
+            <div class="menu-item">🥤 سن كولا</div>
+
+            <div class="menu-item" style="grid-column: 1 / -1; border: 2px dashed var(--gold-color); background: #fffcf5;">
+                🌴 <strong>كرتون تمر إخلاص (إفطار صائم)</strong><br>
+                <small>يحتوي على 100 حبة مغلفة</small>
+            </div>
+        </div>
+
+        <div class="equipment-box">
+            <p>✅ يشمل قهوجي ومباشر (خدمة 50 شخص)</p>
+            <p>✨ يشمل كامل العدة: مباخر، فناجيل، براريد، وكل مستلزمات الضيافة</p>
+        </div>
+
+
+        <a href="https://wa.me/966536895975" class="cta-button">احجز موعدك الآن</a>
+    </div>
+</div>
+
+</body>
+</html>
