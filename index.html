@@ -200,74 +200,7 @@ body {
         
         footer { background: #f4f1ed; padding: 40px; text-align: center; margin-top: 50px; font-size: 13px; }
 
-            /* =========================================
-       تنسيق قسم إعلان رمضان الجديد
-    ========================================= */
-    .ramadan-ads-container {
-        max-width: 1100px;
-        margin: 20px auto;
-        padding: 0 20px;
-    }
-    .ramadan-card {
-        background: linear-gradient(135deg, #2c1e12 0%, #85530e 100%);
-        border-radius: 20px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: row-reverse; /* الصورة يسار والنص يمين */
-        align-items: center;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        border: 2px solid var(--gold-color);
-        position: relative;
-    }
-    .ramadan-image {
-        flex: 1;
-        min-height: 250px;
-    }
-    .ramadan-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-    .ramadan-content {
-        flex: 1.2;
-        padding: 30px;
-        color: white;
-        text-align: center;
-    }
-    .ramadan-content h2 {
-        color: var(--gold-color);
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-    .ramadan-content .discount-badge {
-        background: #e74c3c;
-        color: white;
-        padding: 5px 20px;
-        border-radius: 50px;
-        font-size: 24px;
-        font-weight: bold;
-        display: inline-block;
-        margin: 10px 0;
-        animation: pulse 2s infinite;
-    }
-    .ramadan-content p {
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-    /* استجابة الإعلان للموبايل */
-    @media (max-width: 768px) {
-        .ramadan-card { flex-direction: column; }
-        .ramadan-image { width: 100%; min-height: 200px; }
-        .ramadan-content { padding: 20px; }
-        .ramadan-content h2 { font-size: 22px; }
-    }
-    /* ========================================= */
+
     </style>
 
 </head>
@@ -306,7 +239,6 @@ body {
             <a href="menu.html">التقديمات</a>
             <a href="popular-food.html"> المداخل والأكلات الشعبية</a> 
             <a href="equipment.html">العدة</a>
-            <a href="رمضان.HTML">عروض رمضان</a>
         </nav>
     </header>
 
@@ -315,20 +247,6 @@ body {
 <p>خدمات ضيافة متكاملة في جدة (زواجات – عزاء – مناسبات رسمية)</p>
 
     </section>
-
-        <div class="ramadan-ads-container">
-        <div class="ramadan-card">
-            <div class="ramadan-image">
-                <img src="https://i.postimg.cc/ZKxbF5XS/Whats-App-Image-2026-02-05-at-8-44-33-AM.jpg" alt="عرض رمضان قهوجي جدة">
-            </div>
-            <div class="ramadan-content">
-                <h2>🌙 عرض شهر رمضان المبارك</h2>
-                <div class="discount-badge">خصم 35%</div>
-                <p>استمتع بضيافة ملكية فاخرة في ليالي رمضان. العرض ساري على جميع حجوزات الإفطار والسحور والمناسبات الرمضانية.</p>
-                <a href="رمضان.HTML" class="view-btn" style="padding: 10px 25px; font-size: 16px;">احجز العرض الآن</a>
-            </div>
-        </div>
-    </div>
 
     <div class="container">
         <article class="seo-box">
