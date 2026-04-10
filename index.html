@@ -598,37 +598,66 @@
         /* ==========================================
            13. شريط التواصل السريع (Floating Bar) - الكود الأصلي
            ========================================== */
-        .floating-contact-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(44, 30, 18, 0.95); /* لون بني ملكي */
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 10px 0;
-            box-shadow: 0 -2px 15px rgba(0,0,0,0.3);
-            z-index: 9999;
-            border-top: 2px solid #B8860B; /* خط ذهبي نحيف */
-            backdrop-filter: blur(5px);
-        }
+       /* شريط التواصل السريع في أسفل الشاشة */
+/* شريط التواصل الحديث - بتصميم زجاجي ملكي */
+.floating-contact-bar {
+    position: fixed;
+    bottom: 15px; /* رفعه قليلاً ليعطي شعور العوم */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    background: rgba(44, 30, 18, 0.9); /* بني ملكي شفاف */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 9999;
+    border: 1px solid rgba(184, 134, 11, 0.5); /* إطار ذهبي شفاف */
+    border-radius: 50px; /* زوايا دائرية بالكامل */
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
 
-        .contact-item {
-            text-align: center;
-            color: white;
-            text-decoration: none;
-            font-size: 11px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.contact-item {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+    flex: 1;
+}
 
-        .contact-item img {
-            width: 24px;
-            height: 24px;
-            display: block;
-            margin: 0 auto 4px;
-        }
+.contact-item img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    margin: 0 auto 5px;
+    transition: 0.3s;
+}
+
+/* تأثير عند الضغط أو تمرير الماوس */
+.contact-item:hover {
+    transform: translateY(-3px);
+    color: var(--gold-color);
+}
+
+.contact-item:hover img {
+    filter: drop-shadow(0 0 5px var(--gold-color));
+}
+
+/* لمنع الشريط من تغطية المحتوى */
+body { 
+    padding-bottom: 90px !important; 
+}
+
+/* إخفاء الشريط عند التمرير لأسفل في الفوتر ليعطي مظهراً أنيقاً (اختياري) */
+@media (max-width: 480px) {
+    .floating-contact-bar { width: 95%; padding: 10px 5px; }
+    .contact-item { font-size: 9px; }
+}
 
         /* ==========================================
            14. التجاوب (Media Queries)
@@ -664,28 +693,32 @@
         <div class="loader-logo">القهوة الملكية</div>
         <div class="loader-spinner"></div>
     </div>
+<div class="floating-contact-bar">
+    <a href="tel:0536895975" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3059/3059502.png" alt="اتصال" style="filter: invert(1);">
+        <span>اتصال</span>
+    </a>
 
-    <div class="floating-contact-bar">
-        <a href="tel:0536895975" class="contact-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/3059/3059502.png" alt="اتصال" style="filter: invert(1);">
-            اتصال
-        </a>
+    <a href="https://wa.me/966536895975" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="واتساب">
+        <span>واتساب</span>
+    </a>
 
-        <a href="https://wa.me/966536895975" class="contact-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="واتساب">
-            واتساب
-        </a>
+    <a href="https://www.snapchat.com/add/c01off4e1?src=QR_CODE" class="contact-item">
+        <img src="https://i.postimg.cc/N0Jq79FW/shʿar-snab-shat.png" alt="سناب شات">
+        <span>سناب</span>
+    </a>
 
-        <a href="https://www.tiktok.com/@c01off4e1" class="contact-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="تيك توك" style="filter: invert(1);">
-            تيك توك
-        </a>
+    <a href="https://www.tiktok.com/@c01off4e1" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="تيك توك" style="filter: invert(1);">
+        <span>تيك توك</span>
+    </a>
 
-        <a href="https://www.instagram.com/c01off4e1_" class="contact-item">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="انستقرام">
-            انستقرام
-        </a>
-    </div>
+    <a href="https://www.instagram.com/c01off4e1_" class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="انستقرام">
+        <span>انستقرام</span>
+    </a>
+</div>
 
     <div class="announcement-bar">
         <span>🎉 خصم خاص للعملاء الجدد لفترة محدودة على كافة خدمات الضيافة بجدة</span>
@@ -950,24 +983,7 @@
     </div>
 </section>
 
-        <div class="container">
-            <span class="footer-logo"> القهوة الملكية</span>
-            <p><strong>القهوة الملكية - قهوجي جدة</strong></p>
-            
-            <div class="footer-social">
-                <a href="https://wa.me/966536895975" target="_blank" title="تواصل عبر واتساب">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="واتساب القهوة الملكية">
-                </a>
-                
-                <a href="https://www.tiktok.com/@c01off4e1" target="_blank" title="تابعنا على تيك توك">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="تيك توك القهوة الملكية">
-                </a>
-                
-                <a href="https://www.instagram.com/c01off4e1_" target="_blank" title="تابعنا على انستقرام">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="انستقرام القهوة الملكية">
-                </a>
-            </div>
-            
+
             <p>© 2025 القهوة الملكية - جميع الحقوق محفوظة</p>
             <p class="footer-bottom-text">أفضل خدمات الضيافة والقهوجيين في مدينة جدة</p>
         </div>
