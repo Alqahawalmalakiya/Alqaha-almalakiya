@@ -24,43 +24,126 @@
 
     <style>
 /* ===== بانر عيد الأضحى ===== */
-.eid-promo-banner { max-width: 900px; margin: 40px auto 0; padding: 0 5%; position: relative; z-index: 10; }
+.eid-promo-banner {
+    max-width: 960px;
+    margin: 30px auto 50px;
+    padding: 0 4%;
+    position: relative;
+    z-index: 11;
+}
 .eid-promo-inner {
     background: linear-gradient(135deg, #0e0a05 0%, #2c1a0a 45%, #1a5c2e 100%);
-    border-radius: 24px; padding: 35px 30px;
-    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    border-radius: 20px;
+    padding: 30px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 0 0 1px rgba(212,175,55,0.25);
-    position: relative; overflow: hidden; text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
     transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.4s ease;
 }
-.eid-promo-inner:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 0 2px rgba(212,175,55,0.5); }
+.eid-promo-inner:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 0 2px rgba(212,175,55,0.5);
+}
 .eid-promo-inner::before {
-    content: ''; position: absolute; inset: 0;
-    background-image: radial-gradient(1px 1px at 15% 25%, rgba(212,175,55,0.6) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 40% 60%, rgba(212,175,55,0.4) 0%, transparent 100%), radial-gradient(1px 1px at 65% 20%, rgba(212,175,55,0.5) 0%, transparent 100%), radial-gradient(1px 1px at 80% 75%, rgba(212,175,55,0.3) 0%, transparent 100%);
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 15% 25%, rgba(212,175,55,0.6) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 40% 60%, rgba(212,175,55,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 65% 20%, rgba(212,175,55,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 75%, rgba(212,175,55,0.3) 0%, transparent 100%);
     pointer-events: none;
 }
 .eid-promo-inner::after {
-    content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 2px;
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 60%; height: 2px;
     background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent);
     animation: bannerShimmer 3s linear infinite;
 }
 @keyframes bannerShimmer { 0% { left: -60%; } 100% { left: 110%; } }
-.eid-badge { background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4); border-radius: 12px; padding: 6px 14px; color: #D4AF37; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+
+.eid-badge {
+    background: rgba(212,175,55,0.15);
+    border: 1px solid rgba(212,175,55,0.4);
+    border-radius: 10px;
+    padding: 5px 12px;
+    color: #D4AF37;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 10px;
+}
 .eid-promo-text { flex: 1; position: relative; z-index: 1; }
-.eid-promo-title { font-family: 'Playfair Display', serif; color: #D4AF37; font-size: clamp(20px, 3.5vw, 28px); font-weight: 700; line-height: 1.3; margin-bottom: 8px; text-shadow: 0 0 30px rgba(212,175,55,0.3); }
-.eid-promo-desc { color: rgba(255,255,255,0.75); font-size: clamp(13px, 2vw, 15px); line-height: 1.6; }
-.eid-promo-visual { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; z-index: 1; flex-shrink: 0; }
-.eid-emoji-stack { font-size: clamp(40px, 6vw, 56px); line-height: 1; animation: eidFloat 3s ease-in-out infinite; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3)); }
-@keyframes eidFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-.eid-cta-btn { background: linear-gradient(135deg, #D4AF37, #f0d060); color: #1A120B; font-size: 14px; font-weight: 900; padding: 10px 24px; border-radius: 50px; white-space: nowrap; box-shadow: 0 6px 20px rgba(212,175,55,0.4); transition: all 0.3s ease; }
-.eid-promo-inner:hover .eid-cta-btn { box-shadow: 0 8px 30px rgba(212,175,55,0.6); transform: scale(1.05); }
+.eid-promo-title {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37;
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    text-shadow: 0 0 30px rgba(212,175,55,0.3);
+}
+.eid-promo-desc {
+    color: rgba(255,255,255,0.75);
+    font-size: clamp(12px, 1.8vw, 14px);
+    line-height: 1.6;
+}
+.eid-promo-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative; z-index: 1;
+    flex-shrink: 0;
+}
+.eid-emoji-stack {
+    font-size: clamp(38px, 5vw, 52px);
+    line-height: 1;
+    animation: eidFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+}
+@keyframes eidFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+.eid-cta-btn {
+    background: linear-gradient(135deg, #D4AF37, #f0d060);
+    color: #1A120B;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 9px 22px;
+    border-radius: 50px;
+    white-space: nowrap;
+    box-shadow: 0 5px 18px rgba(212,175,55,0.4);
+    transition: all 0.3s ease;
+}
+.eid-promo-inner:hover .eid-cta-btn {
+    box-shadow: 0 8px 28px rgba(212,175,55,0.6);
+    transform: scale(1.05);
+}
 .eid-deco-lines { display:flex; align-items:center; gap:8px; margin-top:10px; }
-.eid-deco-lines span { display:block; height:1px; width:40px; background:linear-gradient(90deg,transparent,rgba(212,175,55,0.5)); }
+.eid-deco-lines span { display:block; height:1px; width:35px; background:linear-gradient(90deg,transparent,rgba(212,175,55,0.5)); }
 .eid-deco-lines span:last-child { background:linear-gradient(270deg,transparent,rgba(212,175,55,0.5)); }
 .eid-deco-dot { width:5px; height:5px; background:rgba(212,175,55,0.6); border-radius:50%; flex-shrink:0; }
+
+/* ===== تصغير features-white-bar وإزالة الـ margin السالب ===== */
+.features-white-bar {
+    margin-top: 0 !important;
+    margin-bottom: 40px !important;
+}
+
 @media (max-width: 600px) {
-    .eid-promo-inner { flex-direction: column; text-align: center; padding: 28px 22px; }
-    .eid-promo-visual { flex-direction: row; justify-content: center; }
+    .eid-promo-banner { margin: 20px auto 35px; padding: 0 3%; }
+    .eid-promo-inner { flex-direction: column; text-align: center; padding: 20px 16px; gap: 12px; }
+    .eid-promo-title { font-size: 17px; }
+    .eid-promo-desc { font-size: 12px; }
+    .eid-promo-visual { flex-direction: row; justify-content: center; align-items: center; gap: 12px; }
+    .eid-emoji-stack { font-size: 34px; }
+    .eid-cta-btn { font-size: 12px; padding: 8px 18px; }
+    .eid-badge { font-size: 11px; padding: 4px 10px; }
     .eid-deco-lines { justify-content: center; }
 }
     </style>
@@ -103,8 +186,8 @@
 .features-white-bar {
     background: #fff;
     max-width: 1100px;
-    margin: -50px auto 40px;
-    padding: 30px;
+    margin: 0 auto 40px;
+    padding: 25px 30px;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     display: grid;
@@ -724,185 +807,37 @@ body {
             .slide { width: 250px; } /* تصغير السلايدر على الجوال */
             @keyframes scroll {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-250px * 6)); }
+                100% { transform: translateX(calc(-220px * 6)); }
             }
-/* ===== بانر عيد الأضحى ===== */
-.eid-promo-banner {
-    max-width: 900px;
-    margin: 40px auto 0;
-    padding: 0 5%;
-    position: relative;
-    z-index: 10;
-}
- 
-.eid-promo-inner {
-    background: linear-gradient(135deg, #0e0a05 0%, #2c1a0a 45%, #1a5c2e 100%);
-    border-radius: 24px;
-    padding: 35px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 0 0 1px rgba(212,175,55,0.25);
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-}
- 
-.eid-promo-inner:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 0 2px rgba(212,175,55,0.5);
-}
- 
-/* نجوم الخلفية */
-.eid-promo-inner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        radial-gradient(1px 1px at 15% 25%, rgba(212,175,55,0.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 40% 60%, rgba(212,175,55,0.4) 0%, transparent 100%),
-        radial-gradient(1px 1px at 65% 20%, rgba(212,175,55,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 80% 75%, rgba(212,175,55,0.3) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 90% 40%, rgba(212,175,55,0.4) 0%, transparent 100%);
-    pointer-events: none;
-}
- 
-/* خط ذهبي متحرك */
-.eid-promo-inner::after {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%; right: auto;
-    width: 60%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent);
-    animation: bannerShimmer 3s linear infinite;
-}
- 
-@keyframes bannerShimmer {
-    0%   { left: -60%; }
-    100% { left: 110%; }
-}
- 
-.eid-badge {
-    background: rgba(212,175,55,0.15);
-    border: 1px solid rgba(212,175,55,0.4);
-    border-radius: 12px;
-    padding: 6px 14px;
-    color: #D4AF37;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    margin-bottom: 10px;
-}
- 
-.eid-promo-text { flex: 1; position: relative; z-index: 1; }
- 
-.eid-promo-title {
-    font-family: 'Playfair Display', serif;
-    color: #D4AF37;
-    font-size: clamp(20px, 3.5vw, 28px);
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 8px;
-    text-shadow: 0 0 30px rgba(212,175,55,0.3);
-}
- 
-.eid-promo-desc {
-    color: rgba(255,255,255,0.75);
-    font-size: clamp(13px, 2vw, 15px);
-    font-weight: 400;
-    line-height: 1.6;
-}
- 
-.eid-promo-visual {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    position: relative;
-    z-index: 1;
-    flex-shrink: 0;
-}
- 
-.eid-emoji-stack {
-    font-size: clamp(36px, 6vw, 52px);
-    line-height: 1;
-    animation: eidFloat 3s ease-in-out infinite;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
-}
- 
-@keyframes eidFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
- 
-.eid-cta-btn {
-    background: linear-gradient(135deg, #D4AF37, #f0d060);
-    color: #1A120B;
-    font-size: 14px;
-    font-weight: 900;
-    padding: 10px 24px;
-    border-radius: 50px;
-    white-space: nowrap;
-    box-shadow: 0 6px 20px rgba(212,175,55,0.4);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
- 
-.eid-cta-btn::before {
-    content: '';
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    transition: left 0.5s ease;
-}
- 
-.eid-promo-inner:hover .eid-cta-btn::before { left: 100%; }
- 
-.eid-promo-inner:hover .eid-cta-btn {
-    box-shadow: 0 8px 30px rgba(212,175,55,0.6);
-    transform: scale(1.05);
-}
- 
-/* خطوط زخرفية جانبية */
-.eid-deco-lines {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-}
-.eid-deco-lines span {
-    display: block;
-    height: 1px;
-    width: 40px;
-    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5));
-}
-.eid-deco-lines span:last-child {
-    background: linear-gradient(270deg, transparent, rgba(212,175,55,0.5));
-}
-.eid-deco-dot {
-    width: 5px; height: 5px;
-    background: rgba(212,175,55,0.6);
-    border-radius: 50%;
-    flex-shrink: 0;
-}
- 
-@media (max-width: 600px) {
-    .eid-promo-inner {
-        flex-direction: column;
-        text-align: center;
-        padding: 28px 22px;
-    }
-    .eid-promo-visual { flex-direction: row; justify-content: center; }
-    .eid-emoji-stack { font-size: 40px; }
-    .eid-deco-lines { justify-content: center; }
-}
-            
+            .slide { width: 220px; }
+            .section-padding { padding: 40px 4%; }
+            .seo-box, .faq-section { padding: 25px 16px; }
+            .seo-box h2 { font-size: 18px; }
+            .seo-box p { font-size: 14px; }
+            .services-grid { grid-template-columns: 1fr; gap: 16px; }
+            .service-card { padding: 15px; }
+            .service-card img { height: 170px; }
+            .contact-cta { padding: 30px 16px; }
+            .contact-cta h2 { font-size: 20px; }
+            .stats-section { padding: 40px 4%; gap: 20px; }
+            .stat-number { font-size: 26px; }
+            .stat-label { font-size: 13px; }
+            .locations-bar { padding: 15px 12px; font-size: 12px; }
+        }
+
+        @media (max-width: 991px) {
+            .nav-links, .nav-actions { display: none; }
+            .menu-toggle { display: block; }
+            header { top: 40px; padding: 10px 5%; background: var(--white); }
+            header.scrolled { top: 0; }
+            .hero-section { height: auto; padding: 100px 20px 35px; }
+            .hero-bg { background: var(--bg-color); }
+            .hero-subtitle { font-size: 15px; }
+            .hero-title { font-size: clamp(20px, 5vw, 30px); }
+            .hero-text { font-size: 14px; margin-bottom: 18px; }
+            .btn { padding: 10px 22px; font-size: 14px; }
+            .contact-cta h2 { font-size: 26px; }
+            .phone-number { font-size: 24px; }
         }
     </style>
 
@@ -973,7 +908,6 @@ body {
         <i class="fa-solid fa-xmark close-menu" onclick="toggleMobileMenu()"></i>
         <div class="mobile-nav-links">
             <a href="index.html">الرئيسية</a>
-            <a href="عيد الاضحى.html">عبد الأضحى</a>
             <a href="men.html">قهوجي رجال</a>
             <a href="women.html">صبابات نساء</a>
             <a href="zamzam.html">صبابين زمزم</a>
