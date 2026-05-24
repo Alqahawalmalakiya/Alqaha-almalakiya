@@ -22,132 +22,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-    <style>
-/* ===== بانر عيد الأضحى ===== */
-.eid-promo-banner {
-    max-width: 960px;
-    margin: 30px auto 50px;
-    padding: 0 4%;
-    position: relative;
-    z-index: 11;
-}
-.eid-promo-inner {
-    background: linear-gradient(135deg, #0e0a05 0%, #2c1a0a 45%, #1a5c2e 100%);
-    border-radius: 20px;
-    padding: 30px 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 0 0 1px rgba(212,175,55,0.25);
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.4s ease;
-}
-.eid-promo-inner:hover {
-    transform: translateY(-5px) scale(1.01);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 0 2px rgba(212,175,55,0.5);
-}
-.eid-promo-inner::before {
-    content: '';
-    position: absolute; inset: 0;
-    background-image:
-        radial-gradient(1px 1px at 15% 25%, rgba(212,175,55,0.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 40% 60%, rgba(212,175,55,0.4) 0%, transparent 100%),
-        radial-gradient(1px 1px at 65% 20%, rgba(212,175,55,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 80% 75%, rgba(212,175,55,0.3) 0%, transparent 100%);
-    pointer-events: none;
-}
-.eid-promo-inner::after {
-    content: '';
-    position: absolute; top: 0; left: -100%;
-    width: 60%; height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent);
-    animation: bannerShimmer 3s linear infinite;
-}
-@keyframes bannerShimmer { 0% { left: -60%; } 100% { left: 110%; } }
-
-.eid-badge {
-    background: rgba(212,175,55,0.15);
-    border: 1px solid rgba(212,175,55,0.4);
-    border-radius: 10px;
-    padding: 5px 12px;
-    color: #D4AF37;
-    font-size: 12px;
-    font-weight: 700;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-.eid-promo-text { flex: 1; position: relative; z-index: 1; }
-.eid-promo-title {
-    font-family: 'Playfair Display', serif;
-    color: #D4AF37;
-    font-size: clamp(18px, 3vw, 26px);
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 8px;
-    text-shadow: 0 0 30px rgba(212,175,55,0.3);
-}
-.eid-promo-desc {
-    color: rgba(255,255,255,0.75);
-    font-size: clamp(12px, 1.8vw, 14px);
-    line-height: 1.6;
-}
-.eid-promo-visual {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    position: relative; z-index: 1;
-    flex-shrink: 0;
-}
-.eid-emoji-stack {
-    font-size: clamp(38px, 5vw, 52px);
-    line-height: 1;
-    animation: eidFloat 3s ease-in-out infinite;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
-}
-@keyframes eidFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
-.eid-cta-btn {
-    background: linear-gradient(135deg, #D4AF37, #f0d060);
-    color: #1A120B;
-    font-size: 13px;
-    font-weight: 900;
-    padding: 9px 22px;
-    border-radius: 50px;
-    white-space: nowrap;
-    box-shadow: 0 5px 18px rgba(212,175,55,0.4);
-    transition: all 0.3s ease;
-}
-.eid-promo-inner:hover .eid-cta-btn {
-    box-shadow: 0 8px 28px rgba(212,175,55,0.6);
-    transform: scale(1.05);
-}
-.eid-deco-lines { display:flex; align-items:center; gap:8px; margin-top:10px; }
-.eid-deco-lines span { display:block; height:1px; width:35px; background:linear-gradient(90deg,transparent,rgba(212,175,55,0.5)); }
-.eid-deco-lines span:last-child { background:linear-gradient(270deg,transparent,rgba(212,175,55,0.5)); }
-.eid-deco-dot { width:5px; height:5px; background:rgba(212,175,55,0.6); border-radius:50%; flex-shrink:0; }
-
-/* ===== تصغير features-white-bar وإزالة الـ margin السالب ===== */
-.features-white-bar {
-    margin-top: 0 !important;
-    margin-bottom: 40px !important;
-}
-
-@media (max-width: 600px) {
-    .eid-promo-banner { margin: 20px auto 35px; padding: 0 3%; }
-    .eid-promo-inner { flex-direction: column; text-align: center; padding: 20px 16px; gap: 12px; }
-    .eid-promo-title { font-size: 17px; }
-    .eid-promo-desc { font-size: 12px; }
-    .eid-promo-visual { flex-direction: row; justify-content: center; align-items: center; gap: 12px; }
-    .eid-emoji-stack { font-size: 34px; }
-    .eid-cta-btn { font-size: 12px; padding: 8px 18px; }
-    .eid-badge { font-size: 11px; padding: 4px 10px; }
-    .eid-deco-lines { justify-content: center; }
-}
-    </style>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -165,63 +39,10 @@
     </script>
 
     <style>
-
-        /* قسم الإحصائيات - Counter Section */
-.stats-section {
-    background: #2c1e12;
-    padding: 60px 5%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    text-align: center;
-    border-top: 3px solid var(--gold-color);
-}
-.stat-item { flex: 1; min-width: 200px; color: var(--gold-color); }
-.stat-item i { font-size: 40px; margin-bottom: 15px; display: block; }
-.stat-number { font-size: 35px; font-weight: 800; display: block; font-family: 'Playfair Display', serif; }
-.stat-label { color: #fff; font-size: 16px; margin-top: 5px; opacity: 0.9; }
-
-/* قسم المميزات - Features Bar */
-.features-white-bar {
-    background: #fff;
-    max-width: 1100px;
-    margin: 0 auto 40px;
-    padding: 25px 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    position: relative;
-    z-index: 10;
-}
-.feature-box { text-align: center; display: flex; align-items: center; gap: 15px; flex-direction: row-reverse; justify-content: center; }
-.feature-icon { width: 50px; height: 50px; background: #fdf7ee; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-color); font-size: 20px; flex-shrink: 0; }
-.feature-text h4 { font-size: 15px; color: var(--primary-color); margin-bottom: 2px; }
-.feature-text p { font-size: 12px; color: #888; }
-
-/* قسم آراء العملاء - Testimonials */
-.testimonials-section { padding: 60px 5%; background: var(--bg-color); }
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
-.testimonial-card { background: #fff; padding: 40px 30px; border-radius: 20px; box-shadow: var(--shadow-sm); text-align: center; position: relative; border-bottom: 4px solid #eee; transition: 0.3s; }
-.testimonial-card:hover { transform: translateY(-10px); border-color: var(--gold-color); }
-.quote-icon { font-size: 40px; color: #f2e6d5; margin-bottom: 20px; display: block; }
-.testimonial-text { font-style: italic; color: var(--text-light); margin-bottom: 25px; font-size: 15px; line-height: 1.8; }
-.client-info h4 { color: var(--primary-color); font-size: 18px; }
-.client-info span { color: var(--gold-color); font-size: 13px; }
-
-@media (max-width: 768px) {
-    .feature-box { flex-direction: column; text-align: center; }
-}
-        /* ==========================================
-           1. المتغيرات والإعدادات العامة (نفس تنسيق التمر)
-           ========================================== */
         :root {
-            /* تعديل الألوان لتناسب القهوة (البني والذهبي) */
-            --primary-color: #2c1e12; /* بني داكن ملكي */
+            --primary-color: #2c1e12;
             --primary-light: #5a3a21;
-            --gold-color: #B8860B; /* ذهبي معتم */
+            --gold-color: #B8860B;
             --gold-hover: #D4AF37;
             --bg-color: #FDFBF7;
             --text-dark: #222;
@@ -235,559 +56,200 @@
             --shadow-lg: 0 20px 40px rgba(44, 30, 18, 0.15);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            outline: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--primary-color);
-            overflow-x: hidden;
-            line-height: 1.6;
-            /* إضافة حشو سفلي لشريط التواصل الثابت */
-            padding-bottom: 70px !important; 
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* منع التمرير الجانبي */
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-color); color: var(--primary-color); overflow-x: hidden; line-height: 1.6; padding-bottom: 90px !important; }
+        h1,h2,h3,h4,h5,h6 { font-weight: 700; line-height: 1.3; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
         html, body { width: 100%; margin: 0; padding: 0; }
 
-        /* ==========================================
-           2. شاشة التحميل (Preloader) - تنسيق التمر
-           ========================================== */
-        .preloader {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--primary-color);
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-        .preloader.fade-out {
-            opacity: 0;
-            visibility: hidden;
-        }
-        .loader-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            color: var(--gold-color);
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            animation: pulse 1.5s infinite;
-        }
-        .loader-spinner {
-            width: 50px; height: 50px;
-            border: 3px solid rgba(184, 134, 11, 0.3);
-            border-top-color: var(--gold-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
+        /* ===== Preloader ===== */
+        .preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary-color); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.5s ease, visibility 0.5s ease; }
+        .preloader.fade-out { opacity: 0; visibility: hidden; }
+        .loader-logo { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--gold-color); margin-bottom: 20px; letter-spacing: 1px; animation: pulse 1.5s infinite; }
+        .loader-spinner { width: 50px; height: 50px; border: 3px solid rgba(184,134,11,0.3); border-top-color: var(--gold-color); border-radius: 50%; animation: spin 1s linear infinite; }
         @keyframes spin { 100% { transform: rotate(360deg); } }
-        @keyframes pulse { 0% { opacity: 0.6; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 0.6; transform: scale(0.98); } }
+        @keyframes pulse { 0% { opacity:0.6; transform:scale(0.98); } 50% { opacity:1; transform:scale(1.02); } 100% { opacity:0.6; transform:scale(0.98); } }
 
-        /* ==========================================
-           3. شريط الإعلانات (Announcement Bar)
-           ========================================== */
-        .announcement-bar {
-            background-color: var(--primary-color);
-            color: var(--gold-color);
-            text-align: center;
-            padding: 10px 5%;
-            font-size: 14px;
-            font-weight: 500;
-            position: relative;
-            z-index: 1001;
-            border-bottom: 1px solid rgba(184, 134, 11, 0.2);
-        }
+        /* ===== Announcement Bar ===== */
+        .announcement-bar { background-color: var(--primary-color); color: var(--gold-color); text-align: center; padding: 10px 5%; font-size: 14px; font-weight: 500; position: relative; z-index: 1001; border-bottom: 1px solid rgba(184,134,11,0.2); }
 
-        /* ==========================================
-           4. الهيدر والقوائم (Header & Navigation) - تنسيق التمر
-           ========================================== */
-        header {
-            position: fixed;
-            top: 40px; /* بعد شريط الإعلانات */
-            width: 100%;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: var(--transition-slow);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        header.scrolled {
-            top: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            padding: 10px 5%;
-            box-shadow: var(--shadow-md);
-            border-bottom: none;
-        }
-        
-        .logo-container img {
-            width: 120px; /* تصغير اللوجو قليلاً ليناسب الهيدر الجديد */
-            transition: var(--transition-fast);
-        }
-        header.scrolled .logo-container img {
-            width: 100px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
+        /* ===== Header ===== */
+        header { position: fixed; top: 40px; width: 100%; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: var(--transition-slow); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        header.scrolled { top: 0; background-color: rgba(255,255,255,0.95); backdrop-filter: blur(5px); padding: 10px 5%; box-shadow: var(--shadow-md); border-bottom: none; }
+        .logo-container img { width: 120px; transition: var(--transition-fast); }
+        header.scrolled .logo-container img { width: 100px; }
+        .nav-links { display: flex; gap: 25px; }
         .nav-links li { position: relative; }
-        .nav-links a {
-            color: var(--white);
-            font-weight: 700;
-            font-size: 15px;
-            transition: var(--transition-fast);
-            padding: 5px 0;
-        }
+        .nav-links a { color: var(--white); font-weight: 700; font-size: 15px; transition: var(--transition-fast); padding: 5px 0; }
         header.scrolled .nav-links a { color: var(--primary-color); }
-        
-        .nav-links a::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 0; height: 2px; background: var(--gold-color);
-            transition: var(--transition-fast);
-        }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--gold-color); transition: var(--transition-fast); }
         .nav-links a:hover::after { width: 100%; }
         .nav-links a:hover { color: var(--gold-color) !important; }
-
-        .nav-actions {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        .icon-btn-gold {
-            background: var(--gold-color);
-            color: var(--white) !important;
-            padding: 8px 18px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: bold;
-            transition: var(--transition-fast);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            border: 1px solid #ffffff;
-        }
-        .icon-btn-gold:hover {
-            background: var(--white);
-            color: var(--gold-color) !important;
-            border-color: var(--gold-color);
-            transform: translateY(-2px);
-        }
-
-        .menu-toggle {
-            display: none;
-            color: var(--white);
-            font-size: 24px;
-            cursor: pointer;
-        }
+        .nav-actions { display: flex; gap: 15px; align-items: center; }
+        .icon-btn-gold { background: var(--gold-color); color: var(--white) !important; padding: 8px 18px; border-radius: 12px; font-size: 14px; font-weight: bold; transition: var(--transition-fast); box-shadow: 0 4px 10px rgba(0,0,0,0.15); border: 1px solid #ffffff; }
+        .icon-btn-gold:hover { background: var(--white); color: var(--gold-color) !important; border-color: var(--gold-color); transform: translateY(-2px); }
+        .menu-toggle { display: none; color: var(--white); font-size: 24px; cursor: pointer; }
         header.scrolled .menu-toggle { color: var(--primary-color); }
 
-        /* ==========================================
-           5. قائمة الجوال الجانبية (Mobile Sidebar) - تنسيق التمر
-           ========================================== */
-        .mobile-menu-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); z-index: 1001;
-            opacity: 0; visibility: hidden; transition: var(--transition-fast);
-        }
+        /* ===== Mobile Menu ===== */
+        .mobile-menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1001; opacity: 0; visibility: hidden; transition: var(--transition-fast); }
         .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
-        
-        .mobile-menu {
-            position: fixed; top: 0; right: -300px; width: 300px; height: 100vh;
-            background: var(--white); z-index: 1002;
-            padding: 30px 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-            transition: var(--transition-slow); display: flex; flex-direction: column;
-        }
+        .mobile-menu { position: fixed; top: 0; right: -300px; width: 300px; height: 100vh; background: var(--white); z-index: 1002; padding: 30px 20px; box-shadow: -5px 0 15px rgba(0,0,0,0.1); transition: var(--transition-slow); display: flex; flex-direction: column; }
         .mobile-menu.active { right: 0; }
-        .close-menu {
-            align-self: flex-end; font-size: 24px; color: var(--primary-color); cursor: pointer; margin-bottom: 30px;
-        }
+        .close-menu { align-self: flex-end; font-size: 24px; color: var(--primary-color); cursor: pointer; margin-bottom: 30px; }
         .mobile-nav-links { display: flex; flex-direction: column; gap: 15px; }
-        .mobile-nav-links a { 
-            font-size: 16px; 
-            color: var(--white); 
-            font-weight: 700; 
-            display: block; 
-            padding: 10px 15px; 
-            background: var(--primary-color); 
-            border-radius: 12px; 
-            border: 1px solid #ffffff;
-            transition: 0.3s;
-        }
+        .mobile-nav-links a { font-size: 16px; color: var(--white); font-weight: 700; display: block; padding: 10px 15px; background: var(--primary-color); border-radius: 12px; border: 1px solid #ffffff; transition: 0.3s; }
         .mobile-nav-links a:hover { background: var(--gold-color); }
 
-        /* ==========================================
-           6. الهيرو سكشن (Hero Section) - تنسيق التمر
-           ========================================== */
-        .hero-section {
-            height: 80vh; /* تقليل الارتفاع قليلاً */
-            width: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-        .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            /* استخدام نمط الخلفية الأصلي للكود الخاص بك */
-            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
-            background-size: cover; background-position: center;
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative; z-index: 3; color: var(--text-dark);
-            max-width: 800px; padding: 0 20px;
-        }
-        
+        /* ===== Hero ===== */
+        .hero-section { height: 80vh; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://www.transparenttextures.com/patterns/clean-gray-paper.png'); background-size: cover; background-position: center; z-index: 1; }
+        .hero-content { position: relative; z-index: 3; color: var(--text-dark); max-width: 800px; padding: 0 20px; }
         .hero-subtitle { color: var(--gold-color); font-size: 18px; font-weight: 700; margin-bottom: 15px; display: block; letter-spacing: 1px; }
         .hero-title { font-size: clamp(28px, 5vw, 45px); color: var(--primary-color); line-height: 1.3; margin-bottom: 20px; }
         .hero-text { font-size: clamp(16px, 2vw, 18px); color: var(--text-light); margin-bottom: 30px; }
-
-        .btn {
-            padding: 12px 30px; border-radius: 50px; font-size: 16px; font-weight: 700;
-            cursor: pointer; transition: var(--transition-fast); display: inline-flex; align-items: center; gap: 10px; border: none;
-        }
-        .btn-gold { background: var(--gold-color); color: var(--white); box-shadow: 0 10px 20px rgba(184, 134, 11, 0.3); }
+        .btn { padding: 12px 30px; border-radius: 50px; font-size: 16px; font-weight: 700; cursor: pointer; transition: var(--transition-fast); display: inline-flex; align-items: center; gap: 10px; border: none; }
+        .btn-gold { background: var(--gold-color); color: var(--white); box-shadow: 0 10px 20px rgba(184,134,11,0.3); }
         .btn-gold:hover { background: var(--gold-hover); transform: translateY(-3px); }
 
-        /* ==========================================
-           7. القسم العام والتنسيقات (SEO Box, Grid, Card)
-           ========================================== */
+        /* ===== General ===== */
         .section-padding { padding: 80px 5%; }
         .container { max-width: 1200px; margin: 0 auto; }
-
-        /* تنسيق الـ SEO Box مثل تنسيق التمر */
-        .seo-box { 
-            background: var(--white); 
-            padding: 40px; 
-            border-radius: 20px; 
-            box-shadow: var(--shadow-md); 
-            margin-bottom: 60px; 
-            border-right: 5px solid var(--gold-color); 
-            transition: var(--transition-fast);
-        }
+        .seo-box { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: var(--shadow-md); margin-bottom: 60px; border-right: 5px solid var(--gold-color); transition: var(--transition-fast); }
         .seo-box:hover { box-shadow: var(--shadow-lg); }
         .seo-box h2 { color: var(--primary-color); margin-bottom: 20px; font-size: 24px; font-family: 'Playfair Display', serif; }
         .seo-box p { color: var(--text-light); margin-bottom: 15px; font-size: 16px; line-height: 1.8; }
         .seo-box strong { color: var(--primary-color); font-weight: 700; }
 
-        /* خدمات قريد - تنسيق التمر المحسن */
-        .services-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 30px; 
-        }
-
-        .service-card { 
-            background: var(--white); 
-            padding: 20px; 
-            border-radius: 15px; 
-            text-align: center; 
-            border: 1px solid var(--border-color); 
-            transition: var(--transition-fast); 
-            box-shadow: var(--shadow-sm);
-            display: flex; flex-direction: column; justify-content: space-between;
-            position: relative; overflow: hidden;
-        }
-        .service-card:hover { 
-            box-shadow: var(--shadow-lg); 
-            border-color: var(--gold-color); 
-            transform: translateY(-5px); 
-        }
-        
-        .service-card img { 
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
-            border-radius: 10px; 
-            margin-bottom: 20px; 
-            transition: var(--transition-slow);
-        }
+        /* ===== Services Grid ===== */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: var(--white); padding: 20px; border-radius: 15px; text-align: center; border: 1px solid var(--border-color); transition: var(--transition-fast); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+        .service-card:hover { box-shadow: var(--shadow-lg); border-color: var(--gold-color); transform: translateY(-5px); }
+        .service-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; transition: var(--transition-slow); }
         .service-card:hover img { transform: scale(1.05); }
-
-        .service-card h3 { 
-            color: var(--primary-color); 
-            font-size: 20px; 
-            margin-bottom: 10px; 
-            font-family: 'Playfair Display', serif;
-        }
-        .service-card p { 
-            font-size: 14px; 
-            margin-bottom: 20px; 
-            line-height: 1.5; 
-            color: var(--text-light); 
-            flex-grow: 1;
-        }
-
-        .view-btn { 
-            display: inline-block; 
-            padding: 8px 25px; 
-            background: var(--primary-color); 
-            color: var(--white) !important; 
-            border-radius: 20px; 
-            font-weight: bold; 
-            font-size: 14px; 
-            transition: 0.3s;
-        }
+        .service-card h3 { color: var(--primary-color); font-size: 20px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .service-card p { font-size: 14px; margin-bottom: 20px; line-height: 1.5; color: var(--text-light); flex-grow: 1; }
+        .view-btn { display: inline-block; padding: 8px 25px; background: var(--primary-color); color: var(--white) !important; border-radius: 20px; font-weight: bold; font-size: 14px; transition: 0.3s; }
         .view-btn:hover { background: var(--gold-color); }
 
-        /* ==========================================
-           8. السلايدر التلقائي (Infinite Slider) - تنسيق الكود الأصلي
-           ========================================== */
+        /* ===== Slider ===== */
         .slider-section { padding: 60px 0; background: var(--white); margin: 60px 0; }
         .slider-container { width: 100%; overflow: hidden; direction: ltr; }
-        
-        .slider-track {
-            display: flex;
-            width: calc(300px * 12); /* مضاعفة العدد لضمان السلاسة */
-            animation: scroll 30s linear infinite;
-        }
+        .slider-track { display: flex; width: calc(300px * 12); animation: scroll 30s linear infinite; }
+        .slide { width: 300px; padding: 0 15px; flex-shrink: 0; }
+        .slide img { width: 100%; aspect-ratio: 1/1; height: auto; object-fit: cover; border-radius: 15px; border: 2px solid var(--gold-color); box-shadow: var(--shadow-md); }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-300px * 6)); } }
 
-        .slide { 
-            width: 300px; 
-            padding: 0 15px; 
-            flex-shrink: 0; 
-        }
-
-        .slide img {
-            width: 100%;
-            aspect-ratio: 1 / 1; 
-            height: auto;
-            object-fit: cover;
-            border-radius: 15px;
-            border: 2px solid var(--gold-color); 
-            box-shadow: var(--shadow-md);
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-300px * 6)); } /* تحريك نصف السلسلة */
-        }
-
-        /* ==========================================
-           9. الأسئلة الشائعة (FAQ) - تنسيق التمر
-           ========================================== */
-        .faq-section { 
-            background: var(--white); 
-            padding: 40px; 
-            border-radius: 20px; 
-            box-shadow: var(--shadow-md); 
-            margin: 60px 0; 
-        }
-        .faq-section h2 { 
-            color: var(--primary-color); 
-            margin-bottom: 30px; 
-            text-align: center; 
-            font-family: 'Playfair Display', serif;
-        }
-        .faq-item { 
-            margin-bottom: 15px; 
-            border-bottom: 1px solid var(--border-color); 
-            padding-bottom: 15px; 
-        }
-        .faq-item h3 { 
-            font-size: 17px; 
-            color: var(--primary-color); 
-            cursor: pointer; 
-            display: flex; justify-content: space-between; align-items: center;
-            transition: var(--transition-fast);
-        }
+        /* ===== FAQ ===== */
+        .faq-section { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: var(--shadow-md); margin: 60px 0; }
+        .faq-section h2 { color: var(--primary-color); margin-bottom: 30px; text-align: center; font-family: 'Playfair Display', serif; }
+        .faq-item { margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
+        .faq-item h3 { font-size: 17px; color: var(--primary-color); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: var(--transition-fast); }
         .faq-item h3:hover { color: var(--gold-color); }
-        .faq-item h3::after {
-            content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
-            font-size: 12px; transition: var(--transition-fast);
-        }
+        .faq-item h3::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; font-size: 12px; transition: var(--transition-fast); }
         .faq-item.active h3::after { transform: rotate(180deg); color: var(--gold-color); }
-
-        .faq-item p { 
-            font-size: 15px; 
-            color: var(--text-light); 
-            margin-top: 10px; 
-            display: none; /* إخفاء الإجابة افتراضياً */
-            line-height: 1.7;
-        }
+        .faq-item p { font-size: 15px; color: var(--text-light); margin-top: 10px; display: none; line-height: 1.7; }
         .faq-item.active p { display: block; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* ==========================================
-           10. شريط المواقع (Locations)
-           ========================================== */
-        .locations-bar { 
-            background: #f1ede8; 
-            padding: 25px; 
-            border-radius: 15px; 
-            margin: 40px 0; 
-            text-align: center; 
-            font-size: 14px; 
-            border: 1px solid rgba(184, 134, 11, 0.2);
-        }
+        /* ===== Locations Bar ===== */
+        .locations-bar { background: #f1ede8; padding: 25px; border-radius: 15px; margin: 40px 0; text-align: center; font-size: 14px; border: 1px solid rgba(184,134,11,0.2); }
         .locations-bar strong { color: var(--primary-color); font-size: 16px; display: block; margin-bottom: 10px; }
         .locations-bar span { color: var(--text-light); margin: 0 5px; display: inline-block; }
 
-        /* ==========================================
-           11. دعوة للتواصل (CTA) - تنسيق التمر الملكي
-           ========================================== */
-        .contact-cta { 
-            background: var(--primary-color); 
-            color: var(--white); 
-            padding: 60px 40px; 
-            border-radius: 25px; 
-            text-align: center; 
-            margin-top: 60px; 
-            box-shadow: var(--shadow-lg);
-            border: 2px solid var(--gold-color);
-        }
+        /* ===== CTA ===== */
+        .contact-cta { background: var(--primary-color); color: var(--white); padding: 60px 40px; border-radius: 25px; text-align: center; margin-top: 60px; box-shadow: var(--shadow-lg); border: 2px solid var(--gold-color); }
         .contact-cta h2 { font-size: 30px; margin-bottom: 15px; font-family: 'Playfair Display', serif; color: var(--gold-color); }
         .contact-cta p { font-size: 18px; margin-bottom: 20px; opacity: 0.9; }
         .phone-number { font-size: 28px; font-weight: 800; color: var(--white); margin-bottom: 25px; letter-spacing: 1px; }
-        
-        .contact-btn { 
-            display: inline-block; 
-            padding: 15px 40px; 
-            background: #25D366; /* لون واتساب */
-            color: white; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            font-size: 18px; 
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-        }
+        .contact-btn { display: inline-block; padding: 15px 40px; background: #25D366; color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 18px; transition: 0.3s; box-shadow: 0 5px 15px rgba(37,211,102,0.3); }
         .contact-btn:hover { background: #128C7E; transform: scale(1.05); }
 
-        /* ==========================================
-           12. الفوتر (Footer) - تنسيق التمر المحسن
-           ========================================== */
-        footer { 
-            background: #f4f1ed; 
-            padding: 60px 5% 30px; 
-            text-align: center; 
-            margin-top: 80px; 
-            font-size: 14px; 
-            color: var(--text-light);
-            border-top: 1px solid var(--border-color);
-        }
+        /* ===== Footer ===== */
+        footer { background: #f4f1ed; padding: 60px 5% 30px; text-align: center; margin-top: 80px; font-size: 14px; color: var(--text-light); border-top: 1px solid var(--border-color); }
         .footer-logo { font-size: 22px; font-weight: bold; color: var(--primary-color); margin-bottom: 10px; display: block; }
-        
-        .footer-social { 
-            display: flex; 
-            justify-content: center; 
-            gap: 15px; 
-            margin: 25px 0; 
-        }
-        .footer-social a { 
-            width: 45px; height: 45px; 
-            border-radius: 50%; 
-            background: var(--white); 
-            display: flex; align-items: center; justify-content: center; 
-            transition: var(--transition-fast); 
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
-        }
-        .footer-social a:hover { 
-            background: var(--gold-color); 
-            color: var(--white); 
-            transform: translateY(-3px); 
-            border-color: var(--gold-color);
-        }
+        .footer-social { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
+        .footer-social a { width: 45px; height: 45px; border-radius: 50%; background: var(--white); display: flex; align-items: center; justify-content: center; transition: var(--transition-fast); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); }
+        .footer-social a:hover { background: var(--gold-color); color: var(--white); transform: translateY(-3px); border-color: var(--gold-color); }
         .footer-social img { width: 22px; height: 22px; }
-        
         .footer-bottom-text { font-size: 12px; color: #888; margin-top: 15px; }
 
-        /* ==========================================
-           13. شريط التواصل السريع (Floating Bar) - الكود الأصلي
-           ========================================== */
-       /* شريط التواصل السريع في أسفل الشاشة */
-/* شريط التواصل الحديث - بتصميم زجاجي ملكي */
-.floating-contact-bar {
-    position: fixed;
-    bottom: 15px; /* رفعه قليلاً ليعطي شعور العوم */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 500px;
-    background: rgba(44, 30, 18, 0.9); /* بني ملكي شفاف */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 12px 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    z-index: 9999;
-    border: 1px solid rgba(184, 134, 11, 0.5); /* إطار ذهبي شفاف */
-    border-radius: 50px; /* زوايا دائرية بالكامل */
-    backdrop-filter: blur(10px);
-    transition: 0.3s ease;
-}
+        /* ===== Floating Bar ===== */
+        .floating-contact-bar { position: fixed; bottom: 15px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 500px; background: rgba(44,30,18,0.9); display: flex; justify-content: space-around; align-items: center; padding: 12px 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 9999; border: 1px solid rgba(184,134,11,0.5); border-radius: 50px; backdrop-filter: blur(10px); transition: 0.3s ease; }
+        .contact-item { text-align: center; color: white; text-decoration: none; font-size: 10px; font-weight: 600; transition: 0.3s; flex: 1; }
+        .contact-item img { width: 22px; height: 22px; display: block; margin: 0 auto 5px; transition: 0.3s; }
+        .contact-item:hover { transform: translateY(-3px); color: var(--gold-color); }
+        .contact-item:hover img { filter: drop-shadow(0 0 5px var(--gold-color)); }
 
-.contact-item {
-    text-align: center;
-    color: white;
-    text-decoration: none;
-    font-size: 10px;
-    font-weight: 600;
-    transition: 0.3s;
-    flex: 1;
-}
+        /* ===== بانر عيد الأضحى ===== */
+        .eid-promo-banner { max-width: 900px; margin: 40px auto 0; padding: 0 5%; position: relative; z-index: 10; }
+        .eid-promo-inner { background: linear-gradient(135deg, #0e0a05 0%, #2c1a0a 45%, #1a5c2e 100%); border-radius: 24px; padding: 35px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 0 0 1px rgba(212,175,55,0.25); position: relative; overflow: hidden; text-decoration: none; transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.4s ease; }
+        .eid-promo-inner:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 0 2px rgba(212,175,55,0.5); }
+        .eid-promo-inner::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 15% 25%, rgba(212,175,55,0.6) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 40% 60%, rgba(212,175,55,0.4) 0%, transparent 100%), radial-gradient(1px 1px at 65% 20%, rgba(212,175,55,0.5) 0%, transparent 100%), radial-gradient(1px 1px at 80% 75%, rgba(212,175,55,0.3) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 90% 40%, rgba(212,175,55,0.4) 0%, transparent 100%); pointer-events: none; }
+        .eid-promo-inner::after { content: ''; position: absolute; top: 0; left: -100%; right: auto; width: 60%; height: 2px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent); animation: bannerShimmer 3s linear infinite; }
+        @keyframes bannerShimmer { 0% { left: -60%; } 100% { left: 110%; } }
+        .eid-badge { background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4); border-radius: 12px; padding: 6px 14px; color: #D4AF37; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; display: inline-block; margin-bottom: 10px; }
+        .eid-promo-text { flex: 1; position: relative; z-index: 1; }
+        .eid-promo-title { font-family: 'Playfair Display', serif; color: #D4AF37; font-size: clamp(20px,3.5vw,28px); font-weight: 700; line-height: 1.3; margin-bottom: 8px; text-shadow: 0 0 30px rgba(212,175,55,0.3); }
+        .eid-promo-desc { color: rgba(255,255,255,0.75); font-size: clamp(13px,2vw,15px); font-weight: 400; line-height: 1.6; }
+        .eid-promo-visual { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; z-index: 1; flex-shrink: 0; }
+        .eid-emoji-stack { font-size: clamp(36px,6vw,52px); line-height: 1; animation: eidFloat 3s ease-in-out infinite; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3)); }
+        @keyframes eidFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .eid-cta-btn { background: linear-gradient(135deg,#D4AF37,#f0d060); color: #1A120B; font-size: 14px; font-weight: 900; padding: 10px 24px; border-radius: 50px; white-space: nowrap; box-shadow: 0 6px 20px rgba(212,175,55,0.4); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .eid-cta-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent); transition: left 0.5s ease; }
+        .eid-promo-inner:hover .eid-cta-btn::before { left: 100%; }
+        .eid-promo-inner:hover .eid-cta-btn { box-shadow: 0 8px 30px rgba(212,175,55,0.6); transform: scale(1.05); }
+        .eid-deco-lines { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+        .eid-deco-lines span { display: block; height: 1px; width: 40px; background: linear-gradient(90deg,transparent,rgba(212,175,55,0.5)); }
+        .eid-deco-lines span:last-child { background: linear-gradient(270deg,transparent,rgba(212,175,55,0.5)); }
+        .eid-deco-dot { width: 5px; height: 5px; background: rgba(212,175,55,0.6); border-radius: 50%; flex-shrink: 0; }
 
-.contact-item img {
-    width: 22px;
-    height: 22px;
-    display: block;
-    margin: 0 auto 5px;
-    transition: 0.3s;
-}
+        /* ===== شريط المميزات — تحت البانر مباشرة ===== */
+        .features-white-bar { background: #fff; max-width: 1100px; margin: 40px auto 0; padding: 25px 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; position: relative; z-index: 10; }
+        .feature-box { text-align: center; display: flex; align-items: center; gap: 15px; flex-direction: row-reverse; justify-content: center; }
+        .feature-icon { width: 50px; height: 50px; background: #fdf7ee; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-color); font-size: 20px; flex-shrink: 0; }
+        .feature-text h4 { font-size: 15px; color: var(--primary-color); margin-bottom: 2px; }
+        .feature-text p { font-size: 12px; color: #888; }
 
-/* تأثير عند الضغط أو تمرير الماوس */
-.contact-item:hover {
-    transform: translateY(-3px);
-    color: var(--gold-color);
-}
+        /* ===== قسم الإحصائيات — بنفس ارتفاع الشريط ===== */
+        .stats-section { background: #2c1e12; padding: 45px 0; border-top: 3px solid var(--gold-color); overflow: hidden; }
+        .stats-track-wrapper { width: 100%; overflow: hidden; direction: ltr; }
+        .stats-track { display: flex; align-items: center; animation: statsScroll 20s linear infinite; width: max-content; }
+        .stats-track:hover { animation-play-state: paused; }
+        .stat-item { width: 220px; height: 110px; margin: 0 14px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(184,134,11,0.3); border-radius: 16px; padding: 15px 20px; text-align: center; color: var(--gold-color); transition: 0.3s; }
+        .stat-item:hover { border-color: var(--gold-color); background: rgba(184,134,11,0.1); transform: translateY(-3px); }
+        .stat-item i { font-size: 24px; margin-bottom: 8px; display: block; }
+        .stat-number { font-size: 22px; font-weight: 800; display: block; font-family: 'Playfair Display', serif; line-height: 1.1; }
+        .stat-label { color: rgba(255,255,255,0.85); font-size: 12px; margin-top: 4px; }
+        @keyframes statsScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .stats-section-title { text-align: center; margin-bottom: 25px; padding: 0 5%; }
+        .stats-section-title h3 { font-size: 17px; color: var(--gold-color); font-weight: 700; display: inline-block; }
+        .stats-section-title h3::before, .stats-section-title h3::after { content: ''; display: inline-block; width: 35px; height: 1px; background: var(--gold-color); vertical-align: middle; margin: 0 10px; opacity: 0.6; }
 
-.contact-item:hover img {
-    filter: drop-shadow(0 0 5px var(--gold-color));
-}
+        /* ===== شريط الشركاء — نسخة مزدوجة ===== */
+        .partners-section { padding: 45px 0 35px; background: var(--white); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); overflow: hidden; }
+        .partners-section-title { text-align: center; margin-bottom: 25px; padding: 0 5%; }
+        .partners-section-title h3 { font-size: 17px; color: var(--primary-color); font-weight: 700; display: inline-block; }
+        .partners-section-title h3::before, .partners-section-title h3::after { content: ''; display: inline-block; width: 35px; height: 1px; background: var(--gold-color); vertical-align: middle; margin: 0 10px; opacity: 0.6; }
+        .partners-track-wrapper { width: 100%; overflow: hidden; direction: ltr; }
+        .partners-track { display: flex; align-items: center; animation: partnersScroll 24s linear infinite; width: max-content; }
+        .partners-track:hover { animation-play-state: paused; }
+        .partner-item { width: 150px; height: 85px; margin: 0 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #f0ebe3; border-radius: 14px; padding: 12px 16px; box-shadow: 0 3px 10px rgba(0,0,0,0.04); transition: 0.3s; }
+        .partner-item:hover { border-color: var(--gold-color); box-shadow: 0 6px 20px rgba(184,134,11,0.12); transform: translateY(-3px); }
+        .partner-item-inner { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+        .partner-emoji { font-size: 30px; line-height: 1; }
+        .partner-name { font-size: 11px; font-weight: 700; color: var(--primary-color); text-align: center; direction: rtl; line-height: 1.3; }
+        @keyframes partnersScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* لمنع الشريط من تغطية المحتوى */
-body { 
-    padding-bottom: 90px !important; 
-}
+        /* الشريط الثاني — اتجاه عكسي */
+        .partners-track-reverse { animation-direction: reverse; }
 
-/* إخفاء الشريط عند التمرير لأسفل في الفوتر ليعطي مظهراً أنيقاً (اختياري) */
-@media (max-width: 480px) {
-    .floating-contact-bar { width: 95%; padding: 10px 5px; }
-    .contact-item { font-size: 9px; }
-}
+        /* فاصل بين الشريطين */
+        .partners-divider { margin: 20px 0; }
 
-        /* ==========================================
-           14. التجاوب (Media Queries)
-           ========================================== */
+        /* ===== Media Queries ===== */
         @media (max-width: 991px) {
             .nav-links, .nav-actions { display: none; }
             .menu-toggle { display: block; }
@@ -798,49 +260,29 @@ body {
             .contact-cta h2 { font-size: 26px; }
             .phone-number { font-size: 24px; }
         }
-        
         @media (max-width: 768px) {
             .section-padding { padding: 60px 5%; }
             .seo-box, .faq-section { padding: 30px 20px; }
-            .services-grid { grid-template-columns: 1fr; gap: 20px; }
+            .services-grid { grid-template-columns: repeat(2,1fr) !important; gap: 10px !important; }
+            .service-card { padding: 10px !important; }
+            .service-card img { height: 120px !important; margin-bottom: 10px !important; }
+            .service-card h3 { font-size: 13px !important; margin-bottom: 5px !important; }
+            .service-card p { font-size: 11px !important; margin-bottom: 10px !important; line-height: 1.4 !important; }
+            .view-btn { font-size: 11px !important; padding: 5px 12px !important; }
             .contact-cta { padding: 40px 20px; }
-            .slide { width: 250px; } /* تصغير السلايدر على الجوال */
-            @keyframes scroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-220px * 6)); }
-            }
-            .slide { width: 220px; }
-            .section-padding { padding: 40px 4%; }
-            .seo-box, .faq-section { padding: 25px 16px; }
-            .seo-box h2 { font-size: 18px; }
-            .seo-box p { font-size: 14px; }
-            .services-grid { grid-template-columns: 1fr; gap: 16px; }
-            .service-card { padding: 15px; }
-            .service-card img { height: 170px; }
-            .contact-cta { padding: 30px 16px; }
-            .contact-cta h2 { font-size: 20px; }
-            .stats-section { padding: 40px 4%; gap: 20px; }
-            .stat-number { font-size: 26px; }
-            .stat-label { font-size: 13px; }
-            .locations-bar { padding: 15px 12px; font-size: 12px; }
+            .slide { width: 250px; }
+            .partner-item { width: 120px; height: 72px; margin: 0 10px; padding: 10px 12px; }
+            .partner-emoji { font-size: 24px; }
+            .partner-name { font-size: 10px; }
+            .feature-box { flex-direction: column; text-align: center; }
+            .stat-item { width: 180px; height: 100px; }
+            .stat-number { font-size: 18px; }
         }
-
-        @media (max-width: 991px) {
-            .nav-links, .nav-actions { display: none; }
-            .menu-toggle { display: block; }
-            header { top: 40px; padding: 10px 5%; background: var(--white); }
-            header.scrolled { top: 0; }
-            .hero-section { height: auto; padding: 100px 20px 35px; }
-            .hero-bg { background: var(--bg-color); }
-            .hero-subtitle { font-size: 15px; }
-            .hero-title { font-size: clamp(20px, 5vw, 30px); }
-            .hero-text { font-size: 14px; margin-bottom: 18px; }
-            .btn { padding: 10px 22px; font-size: 14px; }
-            .contact-cta h2 { font-size: 26px; }
-            .phone-number { font-size: 24px; }
+        @media (max-width: 480px) {
+            .floating-contact-bar { width: 95%; padding: 10px 5px; }
+            .contact-item { font-size: 9px; }
         }
     </style>
-
 </head>
 <body>
 
@@ -848,32 +290,29 @@ body {
         <div class="loader-logo">القهوة الملكية</div>
         <div class="loader-spinner"></div>
     </div>
-<div class="floating-contact-bar">
-    <a href="tel:0536895975" class="contact-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/3059/3059502.png" alt="اتصال" style="filter: invert(1);">
-        <span>اتصال</span>
-    </a>
 
-    <a href="https://wa.me/966536895975" class="contact-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="واتساب">
-        <span>واتساب</span>
-    </a>
-
-    <a href="https://www.snapchat.com/add/c01off4e1?src=QR_CODE" class="contact-item">
-        <img src="https://i.postimg.cc/N0Jq79FW/shʿar-snab-shat.png" alt="سناب شات">
-        <span>سناب</span>
-    </a>
-
-    <a href="https://www.tiktok.com/@c01off4e1" class="contact-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="تيك توك" style="filter: invert(1);">
-        <span>تيك توك</span>
-    </a>
-
-    <a href="https://www.instagram.com/c01off4e1_" class="contact-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="انستقرام">
-        <span>انستقرام</span>
-    </a>
-</div>
+    <div class="floating-contact-bar">
+        <a href="tel:0536895975" class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/3059/3059502.png" alt="اتصال" style="filter: invert(1);">
+            <span>اتصال</span>
+        </a>
+        <a href="https://wa.me/966536895975" class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="واتساب">
+            <span>واتساب</span>
+        </a>
+        <a href="https://www.snapchat.com/add/c01off4e1?src=QR_CODE" class="contact-item">
+            <img src="https://i.postimg.cc/N0Jq79FW/shʿar-snab-shat.png" alt="سناب شات">
+            <span>سناب</span>
+        </a>
+        <a href="https://www.tiktok.com/@c01off4e1" class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="تيك توك" style="filter: invert(1);">
+            <span>تيك توك</span>
+        </a>
+        <a href="https://www.instagram.com/c01off4e1_" class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="انستقرام">
+            <span>انستقرام</span>
+        </a>
+    </div>
 
     <div class="announcement-bar">
         <span>🎉 خصم خاص للعملاء الجدد لفترة محدودة على كافة خدمات الضيافة بجدة</span>
@@ -881,11 +320,9 @@ body {
 
     <header id="main-header">
         <div class="menu-toggle" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars-staggered"></i></div>
-        
         <div class="logo-container">
             <img src="https://i.postimg.cc/xdrK6YXb/alqhwt-almklyt-mkanhntdgh-ʿmdwntttajntwahlawahghwyhmytj-(2).png" alt="القهوة الملكية - قهوجي جدة">
         </div>
-        
         <ul class="nav-links">
             <li><a href="index.html">الرئيسية</a></li>
             <li><a href="عيد الاضحى.html">عيد الأضحى</a></li>
@@ -895,7 +332,6 @@ body {
             <li><a href="menu.html">تقديمات</a></li>
             <li><a href="equipment.html">العدة</a></li>
         </ul>
-
         <div class="nav-actions">
             <a href="https://wa.me/966536895975" class="icon-btn-gold" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i> اطلب الآن
@@ -912,15 +348,16 @@ body {
             <a href="women.html">صبابات نساء</a>
             <a href="zamzam.html">صبابين زمزم</a>
             <a href="menu.html">التقديمات</a>
-            <a href="popular-food.html">الأكلات الشعبية</a> 
+            <a href="popular-food.html">الأكلات الشعبية</a>
             <a href="equipment.html">العدة</a>
         </div>
     </div>
 
+    <!-- ===== Hero ===== -->
     <section class="hero-section">
         <div class="hero-bg"></div>
         <div class="hero-content" data-aos="fade-up">
-            <span class="hero-subtitle"> القهوة الملكية</span>
+            <span class="hero-subtitle">القهوة الملكية</span>
             <h1 class="hero-title">قهوجي جدة للمناسبات<br>صبابين قهوة ومباشرين محترفين</h1>
             <p class="hero-text">خدمات ضيافة متكاملة في جدة (زواجات – عزاء – مناسبات رسمية)</p>
             <a href="https://wa.me/966536895975" class="btn btn-gold" target="_blank">
@@ -929,149 +366,227 @@ body {
         </div>
     </section>
 
- 
-<div class="eid-promo-banner" data-aos="fade-up" data-aos-delay="200">
-    <a href="عيد الاضحى.html" class="eid-promo-inner">
-        <div class="eid-promo-text">
-            <div class="eid-badge">🌙 عروض عيد الأضحى المبارك</div>
-            <h2 class="eid-promo-title">باقات ضيافة خاصة للعيد<br>بأسعار لا تُفوَّت!</h2>
-            <p class="eid-promo-desc">الباقة الملكية · الذهبية · الفضية · باقة المأكولات الكبرى<br>مشروبات + تقديمات + كامل العدة</p>
-            <div class="eid-deco-lines">
-                <span></span>
-                <div class="eid-deco-dot"></div>
-                <div class="eid-deco-dot" style="opacity:0.5;width:3px;height:3px;"></div>
-                <div class="eid-deco-dot"></div>
-                <span></span>
+    <!-- ===== بانر عيد الأضحى ===== -->
+    <div class="eid-promo-banner" data-aos="fade-up" data-aos-delay="200">
+        <a href="عيد الاضحى.html" class="eid-promo-inner">
+            <div class="eid-promo-text">
+                <div class="eid-badge">🌙 عروض عيد الأضحى المبارك</div>
+                <h2 class="eid-promo-title">باقات ضيافة خاصة للعيد<br>بأسعار لا تُفوَّت!</h2>
+                <p class="eid-promo-desc">الباقة الملكية · الذهبية · الفضية · باقة المأكولات الكبرى<br>مشروبات + تقديمات + كامل العدة</p>
+                <div class="eid-deco-lines">
+                    <span></span>
+                    <div class="eid-deco-dot"></div>
+                    <div class="eid-deco-dot" style="opacity:0.5;width:3px;height:3px;"></div>
+                    <div class="eid-deco-dot"></div>
+                    <span></span>
+                </div>
+            </div>
+            <div class="eid-promo-visual">
+                <div class="eid-emoji-stack">🐑</div>
+                <div class="eid-cta-btn">اكتشف العروض ←</div>
+            </div>
+        </a>
+    </div>
+
+    <!-- ===== شريط المميزات — مباشرة تحت بانر العيد ===== -->
+    <div class="features-white-bar" data-aos="fade-up">
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="feature-text">
+                <h4>حضور سريع ومميز</h4>
+                <p>نصل إليكم في أسرع وقت</p>
             </div>
         </div>
-        <div class="eid-promo-visual">
-            <div class="eid-emoji-stack">🐑</div>
-            <div class="eid-cta-btn">اكتشف العروض ←</div>
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="feature-text">
+                <h4>جودة ملكية مضمونة</h4>
+                <p>أجود أنواع الهيل والبن</p>
+            </div>
         </div>
-    </a>
-</div>
- 
-<!-- ============================================================
-     نهاية بانر عيد الأضحى
-     ============================================================ -->
- 
-    <div class="features-white-bar" data-aos="fade-up">
-    <div class="feature-box">
-        <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
-        <div class="feature-text">
-            <h4>حضور سريع ومميز</h4>
-            <p>نصل إليكم في أسرع وقت</p>
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+            <div class="feature-text">
+                <h4>ضيافة عربية 100%</h4>
+                <p>أصالة التقديم والقهوة</p>
+            </div>
         </div>
-    </div>
-    <div class="feature-box">
-        <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
-        <div class="feature-text">
-            <h4>جودة ملكية مضمونة</h4>
-            <p>أجود أنواع الهيل والبن</p>
+        <div class="feature-box">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="feature-text">
+                <h4>خدمة آمنة وموثوقة</h4>
+                <p>طاقم محترف وأمين</p>
+            </div>
         </div>
     </div>
-    <div class="feature-box">
-        <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
-        <div class="feature-text">
-            <h4>ضيافة عربية 100%</h4>
-            <p>أصالة التقديم والقهوة</p>
-        </div>
-    </div>
-    <div class="feature-box">
-        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div class="feature-text">
-            <h4>خدمة آمنة وموثوقة</h4>
-            <p>طاقم محترف وأمين</p>
-        </div>
-    </div>
-</div>
 
+    <!-- ===== شريط الإحصائيات — بنفس شكل شريط الشركاء ===== -->
+    <section class="stats-section" data-aos="fade-up">
+        <div class="stats-section-title">
+            <h3>📊 بالأرقام نتحدث</h3>
+        </div>
+        <div class="stats-track-wrapper">
+            <div class="stats-track">
+                <!-- النسخة الأولى -->
+                <div class="stat-item">
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                    <span class="stat-number">+6500</span>
+                    <span class="stat-label">عميل سعيد يثق بنا</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <span class="stat-number">+50</span>
+                    <span class="stat-label">نوع من التقديمات الفاخرة</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span class="stat-number" style="font-size:13px;">الرياض·جدة·مكة<br>الدمام·الطائف·تربة</span>
+                    <span class="stat-label">مناطق نغطيها</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">سنوات من الخبرة والريادة</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-star"></i>
+                    <span class="stat-number">5 ★</span>
+                    <span class="stat-label">تقييم العملاء</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span class="stat-number">+300</span>
+                    <span class="stat-label">مناسبة شهرياً</span>
+                </div>
+                <!-- نسخة مكررة -->
+                <div class="stat-item">
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                    <span class="stat-number">+6500</span>
+                    <span class="stat-label">عميل سعيد يثق بنا</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <span class="stat-number">+50</span>
+                    <span class="stat-label">نوع من التقديمات الفاخرة</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <span class="stat-number" style="font-size:13px;">الرياض·جدة·مكة<br>الدمام·الطائف·تربة</span>
+                    <span class="stat-label">مناطق نغطيها</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">سنوات من الخبرة والريادة</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-star"></i>
+                    <span class="stat-number">5 ★</span>
+                    <span class="stat-label">تقييم العملاء</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span class="stat-number">+300</span>
+                    <span class="stat-label">مناسبة شهرياً</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="stats-section">
-    <div class="stat-item" data-aos="zoom-in">
-        <i class="fa-solid fa-users-viewfinder"></i>
-        <span class="stat-number">+6500</span>
-        <span class="stat-label">عميل سعيد يثق بنا</span>
-    </div>
-    <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
-        <i class="fa-solid fa-mug-hot"></i>
-        <span class="stat-number">+50</span>
-        <span class="stat-label">نوع من التقديمات الفاخرة</span>
-    </div>
-    <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fa-solid fa-map-location-dot"></i>
-        <span class="stat-number">الرياض-جدة-مكة-الدمام-الخبر-الطايف-تربة</span>
-        <span class="stat-label"> مناطق نغطيها </span>
-    </div>
-    <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
-        <i class="fa-solid fa-calendar-check"></i>
-        <span class="stat-number">10</span>
-        <span class="stat-label">سنوات من الخبرة والريادة</span>
-    </div>
-</section>
+    <!-- ===== شريط شركاء النجاح — الأول ===== -->
+    <section class="partners-section" data-aos="fade-up">
+        <div class="partners-section-title">
+            <h3>🤝 شركاء النجاح</h3>
+        </div>
+        <div class="partners-track-wrapper">
+            <div class="partners-track">
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏨</span><span class="partner-name">فنادق جدة الفاخرة</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">💒</span><span class="partner-name">قاعات الأفراح الملكية</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏢</span><span class="partner-name">شركات كبرى وحفلات رسمية</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🕌</span><span class="partner-name">مناسبات دينية وعزاء</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎪</span><span class="partner-name">مهرجانات وفعاليات</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏛️</span><span class="partner-name">جهات حكومية</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">👑</span><span class="partner-name">مناسبات VIP خاصة</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎓</span><span class="partner-name">حفلات تخرج وجامعات</span></div></div>
+                <!-- نسخة مكررة -->
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏨</span><span class="partner-name">فنادق جدة الفاخرة</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">💒</span><span class="partner-name">قاعات الأفراح الملكية</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏢</span><span class="partner-name">شركات كبرى وحفلات رسمية</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🕌</span><span class="partner-name">مناسبات دينية وعزاء</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎪</span><span class="partner-name">مهرجانات وفعاليات</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏛️</span><span class="partner-name">جهات حكومية</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">👑</span><span class="partner-name">مناسبات VIP خاصة</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎓</span><span class="partner-name">حفلات تخرج وجامعات</span></div></div>
+            </div>
+        </div>
 
+        <!-- الشريط الثاني — مناسبات ضيافة بعنوان مختلف -->
+        <div class="partners-divider"></div>
+        <div class="partners-section-title" style="margin-top:20px;">
+            <h3>✨ مناسباتنا</h3>
+        </div>
+        <div class="partners-track-wrapper">
+            <div class="partners-track partners-track-reverse">
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">💍</span><span class="partner-name">حفلات الزواج والأفراح</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🕯️</span><span class="partner-name">مجالس العزاء والتأبين</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">👶</span><span class="partner-name">حفلات المواليد والعقيقة</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏡</span><span class="partner-name">الديوانيات والسمرات</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎂</span><span class="partner-name">أعياد الميلاد والتكريم</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🌙</span><span class="partner-name">سهرات رمضان والعيد</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">📋</span><span class="partner-name">اجتماعات الأعمال</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🐑</span><span class="partner-name">ضيافة الذبائح والولائم</span></div></div>
+                <!-- نسخة مكررة -->
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">💍</span><span class="partner-name">حفلات الزواج والأفراح</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🕯️</span><span class="partner-name">مجالس العزاء والتأبين</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">👶</span><span class="partner-name">حفلات المواليد والعقيقة</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏡</span><span class="partner-name">الديوانيات والسمرات</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎂</span><span class="partner-name">أعياد الميلاد والتكريم</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🌙</span><span class="partner-name">سهرات رمضان والعيد</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">📋</span><span class="partner-name">اجتماعات الأعمال</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🐑</span><span class="partner-name">ضيافة الذبائح والولائم</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Main Content ===== -->
     <div class="container section-padding">
-        
-        <article class="seo-box" data-aos="fade-up">
-            <h2>نوفر أفضل قهوجي وصبابين بجدة لجميع أحياء المدينة</h2>
-            <p>تعتبر <strong>القهوة الملكية</strong> الخدمة الرائدة في توفير <strong>قهوجي جدة</strong> يمتلك الخبرة والأمانة. نحن نعي تماماً أن الضيافة هي واجهة كل مناسبة، لذا حرصنا على اختيار طاقم <strong>صبابين بجدة</strong> يتمتعون باللباقة والزي الرسمي السعودي الأنيق. سواء كنت في شمال جدة أو جنوبها، نوفر لك <strong>ارقام قهوجيين بجدة</strong> متاحين على مدار الساعة لتلبية طلباتكم.</p>
-            <p>خدماتنا تشمل توفير <strong>مباشرين قهوة جدة</strong> للحفلات الرسمية والخاصة، مع تقديم أجود أنواع القهوة العربية والتمور الفاخرة. كما نتميز بتوفير <strong>قهوجيات صبابات بجدة</strong> للمناسبات النسائية، حيث نضمن لكِ التميز والخصوصية التامة في تقديم الضيافة النسائية.</p>
-            <p>إذا كنت تبحث عن <strong>ارخص قهوجي في جدة</strong> دون التنازل عن الجودة، فإن القهوة الملكية تقدم عروضاً تنافسية لكافة المناسبات. نحن نغطي جميع الاحتياجات من دلال ملكية، وفناجين مذهبة، ومباخر عود ملكي لتكتمل فخامة ضيافتكم.</p>
-        </article>
 
         <div class="services-grid">
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                 <img src="https://i.postimg.cc/m2LQHPxk/image-(1).jpg" alt="قهوجي رجال بجدة">
                 <h3>خدمات الرجال</h3>
                 <p>صبابين بزي رسمي فاخر للمناسبات والزواجات.</p>
-                <div class="card-footer">
-                    <a href="men.html" class="view-btn">التفاصيل</a>
-                </div>
+                <div class="card-footer"><a href="men.html" class="view-btn">التفاصيل</a></div>
             </div>
-
             <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                 <img src="https://i.postimg.cc/527bqNjb/Whats-App-Image-2025-10-28-at-15-26-51-19c2657e.jpg" alt="صبابات نساء بجدة">
                 <h3>خدمات النساء</h3>
                 <p>مباشرات وصبابات محترفات بخصوصية تامة.</p>
-                <div class="card-footer">
-                    <a href="women.html" class="view-btn">التفاصيل</a>
-                </div>
+                <div class="card-footer"><a href="women.html" class="view-btn">التفاصيل</a></div>
             </div>
-
             <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <img src="https://i.postimg.cc/fTsMYCRd/600x900-4557F782-0E85-421A-AA9F-4EA10AE5A67B.jpg" alt="صبابين ماء زمزم">
                 <h3>صبابين زمزم</h3>
                 <p>خدمة سقاية ماء زمزم مبردة ومعقمة.</p>
-                <div class="card-footer">
-                    <a href="zamzam.html" class="view-btn">التفاصيل</a>
-                </div>
+                <div class="card-footer"><a href="zamzam.html" class="view-btn">التفاصيل</a></div>
             </div>
-
             <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                 <img src="https://i.postimg.cc/L4rPzrrQ/image.png" alt="مداخل وأكلات شعبية جدة">
                 <h3>المداخل والأكلات</h3>
                 <p>بوفيه ومداخل شعبية تنسق بأسلوب راقي.</p>
-                <div class="card-footer">
-                    <a href="popular-food.html" class="view-btn">التفاصيل</a>
-                </div>
+                <div class="card-footer"><a href="popular-food.html" class="view-btn">التفاصيل</a></div>
             </div>
-
             <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                 <img src="https://i.postimg.cc/Kvj1bBSp/image-(2).jpg" alt="قائمة تقديمات الضيافة">
                 <h3>التقديمات</h3>
                 <p>تشكيلة حلى وقهوة وشاي فاخر ومكسرات.</p>
-                <div class="card-footer">
-                    <a href="menu.html" class="view-btn">التفاصيل</a>
-                </div>
+                <div class="card-footer"><a href="menu.html" class="view-btn">التفاصيل</a></div>
             </div>
-
             <div class="service-card" data-aos="fade-up" data-aos-delay="600">
                 <img src="https://i.postimg.cc/9fL22Hdr/Whats-App-Image-2025-09-19-at-23-30-28-5af981de.jpg" alt="تأجير عدة ضيافة جدة">
                 <h3>العدة واللوازم</h3>
                 <p>تأجير مستلزمات الضيافة الملكية ودلال.</p>
-                <div class="card-footer">
-                    <a href="equipment.html" class="view-btn">التفاصيل</a>
-                </div>
+                <div class="card-footer"><a href="equipment.html" class="view-btn">التفاصيل</a></div>
             </div>
         </div>
 
@@ -1096,22 +611,18 @@ body {
 
         <section class="faq-section" data-aos="fade-up">
             <h2><i class="fa-solid fa-circle-question" style="color: var(--gold-color);"></i> الأسئلة الشائعة حول خدمات قهوجي جدة</h2>
-            
             <div class="faq-item">
                 <h3>ما هي أسعار القهوجيين والصبابين في جدة؟</h3>
                 <p>تختلف الأسعار بناءً على عدد الضيوف ومدة المناسبة، ولكننا في القهوة الملكية نقدم أرخص أسعار القهوجيين بجدة مع الحفاظ على أعلى مستويات الجودة والاحترافية.</p>
             </div>
-            
             <div class="faq-item">
                 <h3>هل توفرون قهوجيات صبابات للمناسبات النسائية بجدة؟</h3>
                 <p>نعم، نوفر طاقم نسائي متكامل من القهوجيات والصبابات والمباشرات المحترفات بزي رسمي وأنيق، مع ضمان تام للخصوصية في جميع قاعات ومنازل جدة.</p>
             </div>
-            
             <div class="faq-item">
                 <h3>هل تخدمون في أحياء شمال جدة مثل الحمدانية وأبحر؟</h3>
                 <p>بالتأكيد، نحن نغطي كافة أحياء جدة بما في ذلك الحمدانية، أبحر الشمالية، المرجان، المروة، والسامر، ونصل إليكم في أسرع وقت ممكن.</p>
             </div>
-            
             <div class="faq-item">
                 <h3>ما هي المشروبات التي يقدمها صبابين القهوة الملكية؟</h3>
                 <p>نقدم القهوة العربية الأصيلة، الشاي بأنواعه (أحمر، أخضر، نعناع)، الزنجبيل، القشر، بالإضافة إلى البخور والعود الملكي حسب الطلب.</p>
@@ -1122,6 +633,13 @@ body {
             <strong><i class="fa-solid fa-map-location-dot"></i> نخدمكم في جميع أحياء جدة:</strong>
             <span>حي أبحر</span> | <span>حي الحمدانية</span> | <span>حي المرجان</span> | <span>حي البساتين</span> | <span>حي السامر</span> | <span>حي المروة</span> | <span>حي النعيم</span> | <span>حي الخالدية</span> | <span>حي المحمدية</span> | <span>حي الروضة</span>
         </div>
+
+        <article class="seo-box" data-aos="fade-up" itemscope itemtype="https://schema.org/LocalBusiness">
+            <h2 itemprop="name">أفضل قهوجي وصبابين بجدة — القهوة الملكية</h2>
+            <p>تُعدّ <strong>القهوة الملكية</strong> الخيار الأول لمن يبحث عن <strong>قهوجي جدة</strong> موثوق يجمع بين الخبرة والأمانة. نحرص على انتقاء طاقم <strong>صبابين بجدة</strong> يتمتعون باللباقة والزي الرسمي السعودي الأنيق، ليكونوا الواجهة المثالية لأي مناسبة. نغطّي شمال جدة وجنوبها، ونوفر <strong>أرقام قهوجيين بجدة</strong> متاحين على مدار الساعة.</p>
+            <p>خدماتنا تشمل <strong>مباشرين قهوة جدة</strong> للحفلات والزواجات والعزاء والمناسبات الرسمية، بالإضافة إلى <strong>صبابات نساء بجدة</strong> بخصوصية تامة للمناسبات النسائية. نقدم أجود أنواع القهوة العربية، والشاي، والبخور، مع دلال ملكية وفناجين مذهبة تُكمل فخامة ضيافتكم.</p>
+            <p>إذا كنت تبحث عن <strong>أرخص قهوجي في جدة</strong> دون التنازل عن الجودة، فالقهوة الملكية تُقدّم عروضاً تنافسية تناسب جميع الميزانيات. <a href="https://wa.me/966536895975" style="color:var(--gold-color);font-weight:700;">تواصل معنا الآن</a> واحجز خدمتك بكل سهولة ويسر.</p>
+        </article>
 
         <section class="contact-cta" data-aos="zoom-in">
             <h2>احجز ضيافتك الآن مع القهوة الملكية</h2>
@@ -1134,60 +652,33 @@ body {
     </div>
 
     <footer data-aos="fade-up">
-
-
-
-            <p>© 2025 القهوة الملكية - جميع الحقوق محفوظة</p>
-            <p class="footer-bottom-text">أفضل خدمات الضيافة والقهوجيين في مدينة جدة</p>
-        </div>
+        <p>© 2025 القهوة الملكية - جميع الحقوق محفوظة</p>
+        <p class="footer-bottom-text">أفضل خدمات الضيافة والقهوجيين في مدينة جدة</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <script>
-        // 1. إخفاء شاشة التحميل (Preloader)
         window.addEventListener('load', function() {
             const preloader = document.getElementById('preloader');
-            setTimeout(() => {
-                preloader.classList.add('fade-out');
-            }, 500);
+            setTimeout(() => { preloader.classList.add('fade-out'); }, 500);
         });
-
-        // 2. تفعيل مكتبة الحركات (AOS)
-        AOS.init({
-            duration: 800,
-            offset: 100,
-            once: true 
-        });
-
-        // 3. تأثير الهيدر عند النزول
+        AOS.init({ duration: 800, offset: 100, once: true });
         const header = document.getElementById('main-header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
         });
-
-        // 4. فتح وإغلاق قائمة الجوال
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileOverlay = document.getElementById('mobileOverlay');
-
         function toggleMobileMenu() {
             mobileMenu.classList.toggle('active');
             mobileOverlay.classList.toggle('active');
-            // منع التمرير في الخلفية عند فتح القائمة
             document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
         }
-
-        // 5. جافاسكريبت الأسئلة الشائعة (Accordion)
         const faqItems = document.querySelectorAll('.faq-item h3');
         faqItems.forEach(item => {
-            item.addEventListener('click', () => {
-                item.parentElement.classList.toggle('active');
-            });
+            item.addEventListener('click', () => { item.parentElement.classList.toggle('active'); });
         });
     </script>
 </body>
