@@ -241,7 +241,12 @@
         .partner-item-inner { display: flex; flex-direction: column; align-items: center; gap: 5px; }
         .partner-emoji { font-size: 30px; line-height: 1; }
         .partner-name { font-size: 11px; font-weight: 700; color: var(--primary-color); text-align: center; direction: rtl; line-height: 1.3; }
-        @keyframes partnersScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* شعارات الشركات */
+        .partner-logo { width: 100%; height: 50px; object-fit: contain; filter: grayscale(100%); opacity: 0.7; transition: 0.3s; display: block; }
+        .partner-item:hover .partner-logo { filter: grayscale(0%); opacity: 1; }
+        .partner-item.has-logo { padding: 14px 18px; }
+        .partner-item.has-logo .partner-name { font-size: 10px; color: #999; font-weight: 500; }
+        @keyframes partnersScroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-164px * 12)); } }
 
         /* الشريط الثاني — اتجاه عكسي */
         .partners-track-reverse { animation-direction: reverse; }
@@ -500,23 +505,31 @@
         </div>
         <div class="partners-track-wrapper">
             <div class="partners-track">
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏨</span><span class="partner-name">فنادق جدة الفاخرة</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">💒</span><span class="partner-name">قاعات الأفراح الملكية</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏢</span><span class="partner-name">شركات كبرى وحفلات رسمية</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🕌</span><span class="partner-name">مناسبات دينية وعزاء</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎪</span><span class="partner-name">مهرجانات وفعاليات</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏛️</span><span class="partner-name">جهات حكومية</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">👑</span><span class="partner-name">مناسبات VIP خاصة</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎓</span><span class="partner-name">حفلات تخرج وجامعات</span></div></div>
-                <!-- نسخة مكررة -->
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏨</span><span class="partner-name">فنادق جدة الفاخرة</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">💒</span><span class="partner-name">قاعات الأفراح الملكية</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏢</span><span class="partner-name">شركات كبرى وحفلات رسمية</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🕌</span><span class="partner-name">مناسبات دينية وعزاء</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎪</span><span class="partner-name">مهرجانات وفعاليات</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏛️</span><span class="partner-name">جهات حكومية</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">👑</span><span class="partner-name">مناسبات VIP خاصة</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎓</span><span class="partner-name">حفلات تخرج وجامعات</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/aramco.com" alt="أرامكو" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">أرامكو</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/stc.com.sa" alt="STC" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">STC</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/sabic.com" alt="سابك" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">سابك</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/almarai.com" alt="المراعي" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">المراعي</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/alrajhibank.com.sa" alt="الراجحي" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">مصرف الراجحي</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/mobily.com.sa" alt="موبايلي" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">موبايلي</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/zain.com" alt="زين" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">زين السعودية</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/neom.com" alt="نيوم" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">نيوم</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/acwapower.com" alt="أكوا باور" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">أكوا باور</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/jarir.com" alt="جرير" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">جرير</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/jahez.net" alt="جاهز" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">جاهز</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/tamara.co" alt="تمارا" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">تمارا</span></div></div>
+                <!-- نسخة مكررة للحركة اللانهائية -->
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/aramco.com" alt="أرامكو" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">أرامكو</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/stc.com.sa" alt="STC" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">STC</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/sabic.com" alt="سابك" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">سابك</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/almarai.com" alt="المراعي" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">المراعي</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/alrajhibank.com.sa" alt="الراجحي" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">مصرف الراجحي</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/mobily.com.sa" alt="موبايلي" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">موبايلي</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/zain.com" alt="زين" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">زين السعودية</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/neom.com" alt="نيوم" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">نيوم</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/acwapower.com" alt="أكوا باور" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">أكوا باور</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/jarir.com" alt="جرير" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">جرير</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/jahez.net" alt="جاهز" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">جاهز</span></div></div>
+                <div class="partner-item has-logo"><div class="partner-item-inner"><img class="partner-logo" src="https://logo.clearbit.com/tamara.co" alt="تمارا" onerror="this.style.display='none';this.nextElementSibling.style.fontSize='13px';this.nextElementSibling.style.color='#333'"><span class="partner-name">تمارا</span></div></div>
             </div>
         </div>
 
@@ -528,7 +541,7 @@
         <div class="partners-track-wrapper">
             <div class="partners-track partners-track-reverse">
                 <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">💍</span><span class="partner-name">حفلات الزواج والأفراح</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🕯️</span><span class="partner-name">مجالس العزاء والتأبين</span></div></div>
+                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🕯️</span><span class="partner-name">مجالس العزاء </span></div></div>
                 <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">👶</span><span class="partner-name">حفلات المواليد والعقيقة</span></div></div>
                 <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏡</span><span class="partner-name">الديوانيات والسمرات</span></div></div>
                 <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎂</span><span class="partner-name">أعياد الميلاد والتكريم</span></div></div>
