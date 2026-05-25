@@ -319,10 +319,24 @@
         /* ===== Media Queries ===== */
         @media (max-width: 991px) {
             .nav-links, .nav-actions { display: none; }
-            .menu-toggle { display: none; } /* محذوف — عندنا tab bar */
-            header { top: 40px; padding: 10px 5%; background: var(--white); }
-            header.scrolled { top: 0; }
-            .hero-section { height: 85vh; padding: 0; }
+            .menu-toggle { display: none; }
+            /* الهيدر ثابت في الأعلى غير متحرك، اللوجو في الوسط */
+            header {
+                position: static !important;
+                top: auto !important;
+                background: var(--white) !important;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.06) !important;
+                justify-content: center !important;
+                padding: 12px 5% !important;
+                border-bottom: 1px solid var(--border-color) !important;
+            }
+            header.scrolled {
+                position: static !important;
+                top: auto !important;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.06) !important;
+            }
+            .logo-container img { width: 110px !important; }
+            .hero-section { height: 75vh; padding: 0; }
             .contact-cta h2 { font-size: 26px; }
             .phone-number { font-size: 24px; }
             body { padding-bottom: 150px !important; }
