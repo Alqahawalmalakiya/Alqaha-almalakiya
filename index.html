@@ -319,13 +319,13 @@
         /* ===== Media Queries ===== */
         @media (max-width: 991px) {
             .nav-links, .nav-actions { display: none; }
-            .menu-toggle { display: block; }
+            .menu-toggle { display: none; } /* محذوف — عندنا tab bar */
             header { top: 40px; padding: 10px 5%; background: var(--white); }
             header.scrolled { top: 0; }
             .hero-section { height: 85vh; padding: 0; }
             .contact-cta h2 { font-size: 26px; }
             .phone-number { font-size: 24px; }
-            body { padding-bottom: 150px !important; } /* مساحة للشريطين */
+            body { padding-bottom: 150px !important; }
         }
         @media (max-width: 768px) {
             .section-padding { padding: 60px 5%; }
@@ -411,7 +411,6 @@
         <i class="fa-solid fa-xmark close-menu" onclick="toggleMobileMenu()"></i>
         <div class="mobile-nav-links">
             <a href="index.html">الرئيسية</a>
-            <a href="عيد الاضحى.html">عيد الأضحى</a>
             <a href="men.html">قهوجي رجال</a>
             <a href="women.html">صبابات نساء</a>
             <a href="zamzam.html">صبابين زمزم</a>
