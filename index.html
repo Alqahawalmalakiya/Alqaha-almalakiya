@@ -105,14 +105,74 @@
 
         /* ===== Hero ===== */
         .hero-section { height: 80vh; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
-        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://www.transparenttextures.com/patterns/clean-gray-paper.png'); background-size: cover; background-position: center; z-index: 1; }
-        .hero-content { position: relative; z-index: 3; color: var(--text-dark); max-width: 800px; padding: 0 20px; }
-        .hero-subtitle { color: var(--gold-color); font-size: 18px; font-weight: 700; margin-bottom: 15px; display: block; letter-spacing: 1px; }
-        .hero-title { font-size: clamp(28px, 5vw, 45px); color: var(--primary-color); line-height: 1.3; margin-bottom: 20px; }
-        .hero-text { font-size: clamp(16px, 2vw, 18px); color: var(--text-light); margin-bottom: 30px; }
+
+        /* السلايدر في الخلفية */
+        .hero-slides { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.2s ease-in-out; }
+        .hero-slide.active { opacity: 1; }
+        /* الـ overlay فوق الصور يخلي النص يقرأ */
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(44,30,18,0.65) 0%, rgba(44,30,18,0.4) 100%); z-index: 2; }
+
+        /* نقاط التنقل */
+        .hero-dots { position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 4; }
+        .hero-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5); border: none; cursor: pointer; transition: 0.3s; padding: 0; }
+        .hero-dot.active { background: var(--gold-color); width: 24px; border-radius: 4px; }
+
+        .hero-content { position: relative; z-index: 3; color: var(--white); max-width: 800px; padding: 0 20px; }
+        .hero-subtitle { color: var(--gold-color); font-size: 18px; font-weight: 700; margin-bottom: 15px; display: block; letter-spacing: 1px; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+        .hero-title { font-size: clamp(28px, 5vw, 45px); color: var(--white); line-height: 1.3; margin-bottom: 20px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+        .hero-text { font-size: clamp(15px, 2vw, 18px); color: rgba(255,255,255,0.9); margin-bottom: 30px; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
         .btn { padding: 12px 30px; border-radius: 50px; font-size: 16px; font-weight: 700; cursor: pointer; transition: var(--transition-fast); display: inline-flex; align-items: center; gap: 10px; border: none; }
         .btn-gold { background: var(--gold-color); color: var(--white); box-shadow: 0 10px 20px rgba(184,134,11,0.3); }
         .btn-gold:hover { background: var(--gold-hover); transform: translateY(-3px); }
+
+        /* ===== قائمة جوال — Tab Bar أسفل الشاشة ===== */
+        .mobile-nav-bar {
+            display: none;
+            position: fixed;
+            bottom: 70px; /* فوق شريط التواصل */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 96%;
+            max-width: 480px;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.12);
+            z-index: 998;
+            padding: 6px 4px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .mobile-nav-bar::-webkit-scrollbar { display: none; }
+        .mobile-nav-bar-inner {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 2px;
+            min-width: max-content;
+            width: 100%;
+            padding: 0 4px;
+        }
+        .mobile-nav-bar a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            padding: 6px 10px;
+            border-radius: 12px;
+            color: var(--primary-color);
+            font-size: 10px;
+            font-weight: 700;
+            white-space: nowrap;
+            transition: 0.2s;
+            min-width: 52px;
+        }
+        .mobile-nav-bar a i { font-size: 18px; color: var(--text-light); transition: 0.2s; }
+        .mobile-nav-bar a:hover, .mobile-nav-bar a.active-page { background: #fdf7ee; color: var(--gold-color); }
+        .mobile-nav-bar a:hover i, .mobile-nav-bar a.active-page i { color: var(--gold-color); }
+        @media (max-width: 991px) { .mobile-nav-bar { display: block; } }
 
         /* ===== General ===== */
         .section-padding { padding: 80px 5%; }
@@ -262,10 +322,10 @@
             .menu-toggle { display: block; }
             header { top: 40px; padding: 10px 5%; background: var(--white); }
             header.scrolled { top: 0; }
-            .hero-section { height: auto; padding: 120px 20px 60px; }
-            .hero-bg { background: var(--bg-color); }
+            .hero-section { height: 85vh; padding: 0; }
             .contact-cta h2 { font-size: 26px; }
             .phone-number { font-size: 24px; }
+            body { padding-bottom: 150px !important; } /* مساحة للشريطين */
         }
         @media (max-width: 768px) {
             .section-padding { padding: 60px 5%; }
@@ -351,6 +411,7 @@
         <i class="fa-solid fa-xmark close-menu" onclick="toggleMobileMenu()"></i>
         <div class="mobile-nav-links">
             <a href="index.html">الرئيسية</a>
+            <a href="عيد الاضحى.html">عيد الأضحى</a>
             <a href="men.html">قهوجي رجال</a>
             <a href="women.html">صبابات نساء</a>
             <a href="zamzam.html">صبابين زمزم</a>
@@ -362,7 +423,14 @@
 
     <!-- ===== Hero ===== -->
     <section class="hero-section">
-        <div class="hero-bg"></div>
+        <!-- خلفيات السلايدر — ضع روابط صورك هنا -->
+        <div class="hero-slides">
+            <div class="hero-slide active" style="background-image:url('https://i.postimg.cc/m2LQHPxk/image-(1).jpg')"></div>
+            <div class="hero-slide" style="background-image:url('https://i.postimg.cc/L4rPzrrQ/image.png')"></div>
+            <div class="hero-slide" style="background-image:url('https://i.postimg.cc/fTsMYCRd/600x900-4557F782-0E85-421A-AA9F-4EA10AE5A67B.jpg')"></div>
+            <div class="hero-slide" style="background-image:url('https://i.postimg.cc/9fL22Hdr/Whats-App-Image-2025-09-19-at-23-30-28-5af981de.jpg')"></div>
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-content" data-aos="fade-up">
             <span class="hero-subtitle">القهوة الملكية</span>
             <h1 class="hero-title">قهوجي جدة للمناسبات<br>صبابين قهوة ومباشرين محترفين</h1>
@@ -371,7 +439,47 @@
                 <i class="fa-solid fa-phone"></i> احجز ضيافتك الآن
             </a>
         </div>
+        <div class="hero-dots">
+            <button class="hero-dot active" onclick="goToSlide(0)"></button>
+            <button class="hero-dot" onclick="goToSlide(1)"></button>
+            <button class="hero-dot" onclick="goToSlide(2)"></button>
+            <button class="hero-dot" onclick="goToSlide(3)"></button>
+        </div>
     </section>
+
+    <!-- ===== قائمة التنقل للجوال — Tab Bar ===== -->
+    <nav class="mobile-nav-bar">
+        <div class="mobile-nav-bar-inner">
+            <a href="index.html" class="active-page">
+                <i class="fa-solid fa-house"></i>
+                الرئيسية
+            </a>
+            <a href="men.html">
+                <i class="fa-solid fa-user-tie"></i>
+                رجال
+            </a>
+            <a href="women.html">
+                <i class="fa-solid fa-user"></i>
+                نساء
+            </a>
+            <a href="zamzam.html">
+                <i class="fa-solid fa-droplet"></i>
+                زمزم
+            </a>
+            <a href="menu.html">
+                <i class="fa-solid fa-mug-hot"></i>
+                تقديمات
+            </a>
+            <a href="equipment.html">
+                <i class="fa-solid fa-box-open"></i>
+                العدة
+            </a>
+            <a href="عيد الاضحى.html">
+                <i class="fa-solid fa-star-and-crescent"></i>
+                العيد
+            </a>
+        </div>
+    </nav>
 
     <!-- ===== بانر عيد الأضحى ===== -->
     <div class="eid-promo-banner" data-aos="fade-up" data-aos-delay="200">
@@ -689,7 +797,26 @@
             mobileOverlay.classList.toggle('active');
             document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
         }
-        const faqItems = document.querySelectorAll('.faq-item h3');
+        // ===== Hero Slideshow =====
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-dot');
+        let current = 0, timer;
+
+        function goToSlide(n) {
+            slides[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = n;
+            slides[current].classList.add('active');
+            dots[current].classList.add('active');
+            clearInterval(timer);
+            timer = setInterval(nextSlide, 3500);
+        }
+
+        function nextSlide() {
+            goToSlide((current + 1) % slides.length);
+        }
+
+        timer = setInterval(nextSlide, 3500);
         faqItems.forEach(item => {
             item.addEventListener('click', () => { item.parentElement.classList.toggle('active'); });
         });
