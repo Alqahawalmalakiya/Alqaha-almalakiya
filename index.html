@@ -8,6 +8,7 @@
     <meta name="description" content="أفضل قهوجي جدة لخدمات الضيافة. نوفر صبابين وقهوجيين ومباشرات بجدة . أرخص أسعار القهوجيين في جدة لجميع المناسبات والعزاء.">
     <meta name="keywords" content="قهوجي جدة, صبابين قهوة بجدة, ضيافة القهوة الملكية, ارقام قهوجيين بجدة, صبابات نساء جدة, مباشرين قهوة بجدة, قهوجي الحمدانية, قهوجي ابحر الشمالية, خدمة ضيافة مناسبات جدة, ارخص قهوجي في جدة">    
     <link rel="icon" href="https://i.postimg.cc/xdrK6YXb/alqhwt-almklyt-mkanhntdgh-ʿmdwntttajntwahlawahghwyhmytj-(2).png" type="image/jpeg">
+    <link rel="canonical" href="https://alqahwaalmalakiya.com/">
 
     <meta property="og:image" content="https://i.postimg.cc/L4rPzrrQ/image.png">
     <meta property="og:image:width" content="1200">
@@ -243,28 +244,117 @@
         .contact-item:hover { transform: translateY(-3px); color: var(--gold-color); }
         .contact-item:hover img { filter: drop-shadow(0 0 5px var(--gold-color)); }
 
-        /* ===== بانر عيد الأضحى ===== */
-        .eid-promo-banner { max-width: 900px; margin: 40px auto 0; padding: 0 5%; position: relative; z-index: 10; }
-        .eid-promo-inner { background: linear-gradient(135deg, #0e0a05 0%, #2c1a0a 45%, #1a5c2e 100%); border-radius: 24px; padding: 35px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 0 0 1px rgba(212,175,55,0.25); position: relative; overflow: hidden; text-decoration: none; transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.4s ease; }
-        .eid-promo-inner:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 0 2px rgba(212,175,55,0.5); }
-        .eid-promo-inner::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 15% 25%, rgba(212,175,55,0.6) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 40% 60%, rgba(212,175,55,0.4) 0%, transparent 100%), radial-gradient(1px 1px at 65% 20%, rgba(212,175,55,0.5) 0%, transparent 100%), radial-gradient(1px 1px at 80% 75%, rgba(212,175,55,0.3) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 90% 40%, rgba(212,175,55,0.4) 0%, transparent 100%); pointer-events: none; }
-        .eid-promo-inner::after { content: ''; position: absolute; top: 0; left: -100%; right: auto; width: 60%; height: 2px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent); animation: bannerShimmer 3s linear infinite; }
-        @keyframes bannerShimmer { 0% { left: -60%; } 100% { left: 110%; } }
-        .eid-badge { background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4); border-radius: 12px; padding: 6px 14px; color: #D4AF37; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; display: inline-block; margin-bottom: 10px; }
-        .eid-promo-text { flex: 1; position: relative; z-index: 1; }
-        .eid-promo-title { font-family: 'Playfair Display', serif; color: #D4AF37; font-size: clamp(20px,3.5vw,28px); font-weight: 700; line-height: 1.3; margin-bottom: 8px; text-shadow: 0 0 30px rgba(212,175,55,0.3); }
-        .eid-promo-desc { color: rgba(255,255,255,0.75); font-size: clamp(13px,2vw,15px); font-weight: 400; line-height: 1.6; }
-        .eid-promo-visual { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; z-index: 1; flex-shrink: 0; }
-        .eid-emoji-stack { font-size: clamp(36px,6vw,52px); line-height: 1; animation: eidFloat 3s ease-in-out infinite; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3)); }
-        @keyframes eidFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-        .eid-cta-btn { background: linear-gradient(135deg,#D4AF37,#f0d060); color: #1A120B; font-size: 14px; font-weight: 900; padding: 10px 24px; border-radius: 50px; white-space: nowrap; box-shadow: 0 6px 20px rgba(212,175,55,0.4); transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .eid-cta-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent); transition: left 0.5s ease; }
-        .eid-promo-inner:hover .eid-cta-btn::before { left: 100%; }
-        .eid-promo-inner:hover .eid-cta-btn { box-shadow: 0 8px 30px rgba(212,175,55,0.6); transform: scale(1.05); }
-        .eid-deco-lines { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
-        .eid-deco-lines span { display: block; height: 1px; width: 40px; background: linear-gradient(90deg,transparent,rgba(212,175,55,0.5)); }
-        .eid-deco-lines span:last-child { background: linear-gradient(270deg,transparent,rgba(212,175,55,0.5)); }
-        .eid-deco-dot { width: 5px; height: 5px; background: rgba(212,175,55,0.6); border-radius: 50%; flex-shrink: 0; }
+        /* ===== بانر اليوم الوطني السعودي ===== */
+        .national-day-banner { max-width: 900px; margin: 25px auto 0; padding: 0 5%; position: relative; z-index: 10; }
+        .national-day-inner {
+            background: linear-gradient(135deg, #0d5c2e 0%, #1a8f4a 35%, #0d5c2e 70%, #004d25 100%);
+            border-radius: 24px;
+            padding: 35px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 20px 50px rgba(0,77,37,0.35), 0 0 0 1px rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.4s ease;
+        }
+        .national-day-inner:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 30px 60px rgba(0,77,37,0.45), 0 0 0 2px rgba(255,255,255,0.4); }
+        .national-day-inner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 30% 50%, rgba(255,255,255,0.3) 0%, transparent 100%),
+                radial-gradient(1px 1px at 50% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+                radial-gradient(1px 1px at 70% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 85% 35%, rgba(255,255,255,0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        .national-day-inner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            right: auto;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+            animation: nationalShimmer 3s linear infinite;
+        }
+        @keyframes nationalShimmer { 0% { left: -60%; } 100% { left: 110%; } }
+        .national-badge {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 6px 14px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .national-promo-text { flex: 1; position: relative; z-index: 1; }
+        .national-promo-title {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: clamp(20px,3.5vw,28px);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+        }
+        .national-promo-title span { color: #c4a052; }
+        .national-promo-desc { color: rgba(255,255,255,0.85); font-size: clamp(13px,2vw,15px); font-weight: 400; line-height: 1.6; }
+        .national-promo-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+        .national-image-container {
+            width: clamp(80px, 12vw, 120px);
+            height: clamp(80px, 12vw, 120px);
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .national-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .national-cta-btn {
+            background: linear-gradient(135deg, #c4a052, #d4b76a, #c4a052);
+            color: #004d25;
+            font-size: 14px;
+            font-weight: 900;
+            padding: 10px 24px;
+            border-radius: 50px;
+            white-space: nowrap;
+            box-shadow: 0 6px 20px rgba(196,160,82,0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .national-cta-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent); transition: left 0.5s ease; }
+        .national-day-inner:hover .national-cta-btn::before { left: 100%; }
+        .national-day-inner:hover .national-cta-btn { box-shadow: 0 8px 30px rgba(196,160,82,0.7); transform: scale(1.05); }
+        .national-deco-lines { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+        .national-deco-lines span { display: block; height: 1px; width: 40px; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.5)); }
+        .national-deco-lines span:last-child { background: linear-gradient(270deg,transparent,rgba(255,255,255,0.5)); }
+        .national-deco-dot { width: 5px; height: 5px; background: rgba(255,255,255,0.6); border-radius: 50%; flex-shrink: 0; }
 
         /* ===== شريط المميزات — تحت البانر مباشرة ===== */
         .features-white-bar { background: #fff; max-width: 1100px; margin: 40px auto 0; padding: 25px 30px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; position: relative; z-index: 10; }
@@ -484,10 +574,35 @@
             <a href="equipment.html">
                 <i class="fa-solid fa-box-open"></i>
                 العدة
+            </a>
         </div>
     </nav>
 
-    
+    <!-- ===== بانر اليوم الوطني السعودي ===== -->
+    <div class="national-day-banner" data-aos="fade-up" data-aos-delay="300">
+        <a href="https://wa.me/966536895975" class="national-day-inner" target="_blank">
+            <div class="national-promo-text">
+                <div class="national-badge">🇸🇦 عروض اليوم الوطني السعودي 96</div>
+                <h2 class="national-promo-title">خصم <span>35%</span> على جميع خدمات الضيافة<br>للفترة المحدودة!</h2>
+                <p class="national-promo-desc">القهوة الملكية تحتفل باليوم الوطني معكم<br>صبابين · تقديمات · عدّة كاملة · أسعار لا تُفوَّت 🎉</p>
+                <div class="national-deco-lines">
+                    <span></span>
+                    <div class="national-deco-dot"></div>
+                    <div class="national-deco-dot" style="opacity:0.5;width:3px;height:3px;"></div>
+                    <div class="national-deco-dot"></div>
+                    <span></span>
+                </div>
+            </div>
+            <div class="national-promo-visual">
+                <div class="national-image-container">
+                    <!-- صورتك هنا: ضع رابط الصورة في src -->
+                    <img src="https://i.postimg.cc/xdrK6YXb/alqhwt-almklyt-mkanhntdgh-ʿmdwntttajntwahlawahghwyhmytj-(2).png" alt="عرض اليوم الوطني">
+                </div>
+                <div class="national-cta-btn">احجز العرض الآن ←</div>
+            </div>
+        </a>
+    </div>
+
     <!-- ===== شريط المميزات — مباشرة تحت بانر العيد ===== -->
     <div class="features-white-bar" data-aos="fade-up">
         <div class="feature-box">
@@ -716,18 +831,18 @@
         </section>
 
         <section class="faq-section" data-aos="fade-up">
-            <h2><i class="fa-solid fa-circle-question" style="color: var(--gold-color);"></i> الأسئلة الشائعة حول خدمات قهوجي جدة</h2>
+            <h2><i class="fa-solid fa-circle-question" style="color: var(--gold-color);"></i> الأسئلة الشائعة حول خدمات القهوة الملكية</h2>
             <div class="faq-item">
-                <h3>ما هي أسعار القهوجيين والصبابين في جدة؟</h3>
-                <p>تختلف الأسعار بناءً على عدد الضيوف ومدة المناسبة، ولكننا في القهوة الملكية نقدم أرخص أسعار القهوجيين بجدة مع الحفاظ على أعلى مستويات الجودة والاحترافية.</p>
+                <h3>ما هي أسعار القهوجيين والصبابين؟</h3>
+                <p>تختلف الأسعار بناءً على عدد الضيوف ومدة المناسبة، ولكننا في القهوة الملكية نقدم أسعاراً تنافسية في جميع المناطق مع الحفاظ على أعلى مستويات الجودة والاحترافية.</p>
             </div>
             <div class="faq-item">
-                <h3>هل توفرون قهوجيات صبابات للمناسبات النسائية بجدة؟</h3>
-                <p>نعم، نوفر طاقم نسائي متكامل من القهوجيات والصبابات والمباشرات المحترفات بزي رسمي وأنيق، مع ضمان تام للخصوصية في جميع قاعات ومنازل جدة.</p>
+                <h3>هل توفرون قهوجيات صبابات للمناسبات النسائية؟</h3>
+                <p>نعم، نوفر طاقم نسائي متكامل من القهوجيات والصبابات والمباشرات المحترفات بزي رسمي وأنيق، مع ضمان تام للخصوصية في جميع القاعات والمنازل.</p>
             </div>
             <div class="faq-item">
-                <h3>هل تخدمون في أحياء شمال جدة مثل الحمدانية وأبحر؟</h3>
-                <p>بالتأكيد، نحن نغطي كافة أحياء جدة بما في ذلك الحمدانية، أبحر الشمالية، المرجان، المروة، والسامر، ونصل إليكم في أسرع وقت ممكن.</p>
+                <h3>في أي مدن ومناطق تخدمون؟</h3>
+                <p>بالتأكيد، نخدمكم في جميع مدن ومناطق المملكة ومنها الرياض، جدة، مكة المكرمة، الدمام، الطائف، تربة، ونصل إليكم في أسرع وقت ممكن.</p>
             </div>
             <div class="faq-item">
                 <h3>ما هي المشروبات التي يقدمها صبابين القهوة الملكية؟</h3>
@@ -736,8 +851,8 @@
         </section>
 
         <div class="locations-bar" data-aos="fade-up">
-            <strong><i class="fa-solid fa-map-location-dot"></i> نخدمكم في جميع أحياء جدة:</strong>
-            <span>حي أبحر</span> | <span>حي الحمدانية</span> | <span>حي المرجان</span> | <span>حي البساتين</span> | <span>حي السامر</span> | <span>حي المروة</span> | <span>حي النعيم</span> | <span>حي الخالدية</span> | <span>حي المحمدية</span> | <span>حي الروضة</span>
+            <strong><i class="fa-solid fa-map-location-dot"></i> نخدمكم في جميع مدن ومناطق المملكة:</strong>
+            <span>الرياض</span> | <span>جدة</span> | <span>مكة المكرمة</span> | <span>الدمام</span> | <span>الطائف</span> | <span>تربة</span> | <span>يخدم الزوار من كافة المناطق</span>
         </div>
 
         <article class="seo-box" data-aos="fade-up" itemscope itemtype="https://schema.org/LocalBusiness">
@@ -758,7 +873,7 @@
     </div>
 
     <footer data-aos="fade-up">
-        <p>© 2025 القهوة الملكية - جميع الحقوق محفوظة</p>
+        <p>© 2026 القهوة الملكية - جميع الحقوق محفوظة</p>
         <p class="footer-bottom-text">أفضل خدمات الضيافة والقهوجيين في مدينة جدة</p>
     </footer>
 
@@ -802,6 +917,7 @@
         }
 
         timer = setInterval(nextSlide, 3500);
+        const faqItems = document.querySelectorAll('.faq-item h3');
         faqItems.forEach(item => {
             item.addEventListener('click', () => { item.parentElement.classList.toggle('active'); });
         });
