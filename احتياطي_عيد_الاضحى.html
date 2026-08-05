@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>احتياطي - كود عيد الأضحى | القهوة الملكية</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f4f1ed; padding: 30px; color: #333; line-height: 1.8; }
+        h1 { color: #2c1e12; border-bottom: 3px solid #B8860B; padding-bottom: 10px; }
+        .note { background: #fff; border-right: 5px solid #B8860B; padding: 15px 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .note h2 { color: #8B5A2B; margin-bottom: 8px; }
+        pre { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 12px; overflow-x: auto; direction: ltr; text-align: left; font-size: 13px; white-space: pre-wrap; word-wrap: break-word; }
+        .step { background: #fff; border: 1px solid #e0dcd8; border-radius: 12px; padding: 15px 20px; margin-bottom: 15px; }
+        .step h3 { color: #B8860B; margin-bottom: 5px; }
+        .step p { margin-bottom: 10px; }
+        .tag { background: #B8860B; color: #fff; padding: 2px 10px; border-radius: 20px; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <h1>📦 ملف احتياطي — كود عيد الأضحى المبارك</h1>
+
+    <div class="note">
+        <h2>📌 طريقة الاستخدام عند قدوم العيد:</h2>
+        <p>هذا الملف يحفظ كل أكواد العيد التي أُزيلت من الصفحة الرئيسية (<strong>index.html</strong>) وقت العرض الحالي. عند قدوم عيد الأضحى، أعد نسخ الأجزاء أدناه إلى <strong>index.html</strong> في الأماكن المحددة:</p>
+        <ul>
+            <li><strong>القسم 1 (CSS):</strong> يُلصق داخل وسم <code>&lt;style&gt;</code> في الرأس، مكان أي بانر ترويجي.</li>
+            <li><strong>القسم 2 (رابط القائمة):</strong> يُلصق داخل قائمة التنقل العلوية <code>&lt;ul class="nav-links"&gt;</code>.</li>
+            <li><strong>القسم 3 (رابط الجوال):</strong> يُلصق داخل شريط التنقل السفلي <code>&lt;nav class="mobile-nav-bar"&gt;</code>.</li>
+            <li><strong>القسم 4 (بانر العيد):</strong> يُلصق في منتصف الصفحة، فوق شريط المميزات مباشرة.</li>
+        </ul>
+        <p><em>ملاحظة: تم أيضاً إزالة زر العيد من القائمة عند إخفاء البانر.</em></p>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- ===== القسم 1: كود CSS لبانر عيد الأضحى ===== -->
+    <!-- ================================================================ -->
+    <div class="step">
+        <h3><span class="tag">القسم 1</span> CSS — يُلصق داخل وسم &lt;style&gt; في index.html</h3>
+        <pre>&lt;!-- ===== بانر عيد الأضحى ===== --&gt;
+.eid-promo-banner { max-width: 900px; margin: 40px auto 0; padding: 0 5%; position: relative; z-index: 10; }
+.eid-promo-inner { background: linear-gradient(135deg, #0e0a05 0%, #2c1a0a 45%, #1a5c2e 100%); border-radius: 24px; padding: 35px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.25), 0 0 0 1px rgba(212,175,55,0.25); position: relative; overflow: hidden; text-decoration: none; transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.4s ease; }
+.eid-promo-inner:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 30px 60px rgba(0,0,0,0.3), 0 0 0 2px rgba(212,175,55,0.5); }
+.eid-promo-inner::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(1px 1px at 15% 25%, rgba(212,175,55,0.6) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 40% 60%, rgba(212,175,55,0.4) 0%, transparent 100%), radial-gradient(1px 1px at 65% 20%, rgba(212,175,55,0.5) 0%, transparent 100%), radial-gradient(1px 1px at 80% 75%, rgba(212,175,55,0.3) 0%, transparent 100%), radial-gradient(1.5px 1.5px at 90% 40%, rgba(212,175,55,0.4) 0%, transparent 100%); pointer-events: none; }
+.eid-promo-inner::after { content: ''; position: absolute; top: 0; left: -100%; right: auto; width: 60%; height: 2px; background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent); animation: bannerShimmer 3s linear infinite; }
+@keyframes bannerShimmer { 0% { left: -60%; } 100% { left: 110%; } }
+.eid-badge { background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.4); border-radius: 12px; padding: 6px 14px; color: #D4AF37; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; display: inline-block; margin-bottom: 10px; }
+.eid-promo-text { flex: 1; position: relative; z-index: 1; }
+.eid-promo-title { font-family: 'Playfair Display', serif; color: #D4AF37; font-size: clamp(20px,3.5vw,28px); font-weight: 700; line-height: 1.3; margin-bottom: 8px; text-shadow: 0 0 30px rgba(212,175,55,0.3); }
+.eid-promo-desc { color: rgba(255,255,255,0.75); font-size: clamp(13px,2vw,15px); font-weight: 400; line-height: 1.6; }
+.eid-promo-visual { display: flex; flex-direction: column; align-items: center; gap: 12px; position: relative; z-index: 1; flex-shrink: 0; }
+.eid-emoji-stack { font-size: clamp(36px,6vw,52px); line-height: 1; animation: eidFloat 3s ease-in-out infinite; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3)); }
+@keyframes eidFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.eid-cta-btn { background: linear-gradient(135deg,#D4AF37,#f0d060); color: #1A120B; font-size: 14px; font-weight: 900; padding: 10px 24px; border-radius: 50px; white-space: nowrap; box-shadow: 0 6px 20px rgba(212,175,55,0.4); transition: all 0.3s ease; position: relative; overflow: hidden; }
+.eid-cta-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent); transition: left 0.5s ease; }
+.eid-promo-inner:hover .eid-cta-btn::before { left: 100%; }
+.eid-promo-inner:hover .eid-cta-btn { box-shadow: 0 8px 30px rgba(212,175,55,0.6); transform: scale(1.05); }
+.eid-deco-lines { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.eid-deco-lines span { display: block; height: 1px; width: 40px; background: linear-gradient(90deg,transparent,rgba(212,175,55,0.5)); }
+.eid-deco-lines span:last-child { background: linear-gradient(270deg,transparent,rgba(212,175,55,0.5)); }
+.eid-deco-dot { width: 5px; height: 5px; background: rgba(212,175,55,0.6); border-radius: 50%; flex-shrink: 0; }</pre>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- ===== القسم 2: رابط القائمة العلوية ===== -->
+    <!-- ================================================================ -->
+    <div class="step">
+        <h3><span class="tag">القسم 2</span> رابط القائمة العلوية — يُلصق داخل &lt;ul class="nav-links"&gt;</h3>
+        <pre>&lt;li&gt;&lt;a href="عيد الاضحى.html"&gt;عيد الأضحى&lt;/a&gt;&lt;/li&gt;</pre>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- ===== القسم 3: رابط الجوال ===== -->
+    <!-- ================================================================ -->
+    <div class="step">
+        <h3><span class="tag">القسم 3</span> رابط الجوال — يُلصق داخل &lt;nav class="mobile-nav-bar"&gt;</h3>
+        <pre>&lt;a href="عيد الاضحى.html"&gt;
+    &lt;i class="fa-solid fa-star-and-crescent"&gt;&lt;/i&gt;
+    العيد
+&lt;/a&gt;</pre>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- ===== القسم 4: بانر عيد الأضحى الكامل ===== -->
+    <!-- ================================================================ -->
+    <div class="step">
+        <h3><span class="tag">القسم 4</span> بانر عيد الأضحى — يُلصق فوق شريط المميزات مباشرة</h3>
+        <pre>&lt;!-- ===== بانر عيد الأضحى ===== --&gt;
+&lt;div class="eid-promo-banner" data-aos="fade-up" data-aos-delay="200"&gt;
+    &lt;a href="عيد الاضحى.html" class="eid-promo-inner"&gt;
+        &lt;div class="eid-promo-text"&gt;
+            &lt;div class="eid-badge"&gt;🌙 عروض عيد الأضحى المبارك&lt;/div&gt;
+            &lt;h2 class="eid-promo-title"&gt;باقات ضيافة خاصة للعيد&lt;br&gt;بأسعار لا تُفوَّت!&lt;/h2&gt;
+            &lt;p class="eid-promo-desc"&gt;الباقة الملكية · الذهبية · الفضية · باقة المأكولات الكبرى&lt;br&gt;مشروبات + تقديمات + كامل العدة&lt;/p&gt;
+            &lt;div class="eid-deco-lines"&gt;
+                &lt;span&gt;&lt;/span&gt;
+                &lt;div class="eid-deco-dot"&gt;&lt;/div&gt;
+                &lt;div class="eid-deco-dot" style="opacity:0.5;width:3px;height:3px;"&gt;&lt;/div&gt;
+                &lt;div class="eid-deco-dot"&gt;&lt;/div&gt;
+                &lt;span&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="eid-promo-visual"&gt;
+            &lt;div class="eid-emoji-stack"&gt;🐑&lt;/div&gt;
+            &lt;div class="eid-cta-btn"&gt;اكتشف العروض ←&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/a&gt;
+&lt;/div&gt;</pre>
+    </div>
+
+    <div class="note">
+        <h2>💡 نصيحة</h2>
+        <p>عندما ترغب في إرجاع كود العيد، يمكنك طلب المساعدة من المساعد (Claude) لنسخ الأجزاء بسهولة إلى <strong>index.html</strong> في الأماكن الصحيحة.</p>
+    </div>
+
+</body>
+</html>
