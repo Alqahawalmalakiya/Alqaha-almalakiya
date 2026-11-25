@@ -453,7 +453,7 @@
             .contact-item { font-size: 9px; }
         }
     </style>
-<link rel="stylesheet" href="assets/packages.css"><script src="assets/packages.js" defer></script></head>
+<link rel="stylesheet" href="assets/packages.css"><script src="assets/packages.js" defer></script><link rel="stylesheet" href="assets/booking-ui.css"><script src="assets/booking-ui.js" defer></script></head>
 <body>
 
     
@@ -467,15 +467,15 @@
             <img src="assets/original-images/d7a79bb2bd387b46.webp" alt="واتساب" width="512" height="512" loading="lazy" decoding="async">
             <span>واتساب</span>
         </a>
-        <a href="https://www.snapchat.com/add/c01off4e1?src=QR_CODE" class="contact-item">
+        <a href="https://www.snapchat.com/add/c01off4e1?src=QR_CODE" class="contact-item rc-social-item">
             <img src="assets/original-images/8466a06737f5bf1b.webp" alt="سناب شات" width="250" height="250" loading="lazy" decoding="async">
             <span>سناب</span>
         </a>
-        <a href="https://www.tiktok.com/@c01off4e1" class="contact-item">
+        <a href="https://www.tiktok.com/@c01off4e1" class="contact-item rc-social-item">
             <img src="assets/original-images/262e78ed0873d6a8.webp" alt="تيك توك" style="filter: invert(1);" width="512" height="512" loading="lazy" decoding="async">
             <span>تيك توك</span>
         </a>
-        <a href="https://www.instagram.com/c01off4e1_" class="contact-item">
+        <a href="https://www.instagram.com/c01off4e1_" class="contact-item rc-social-item">
             <img src="assets/original-images/b283278f6bca3e59.webp" alt="انستقرام" width="512" height="512" loading="lazy" decoding="async">
             <span>انستقرام</span>
         </a>
@@ -486,12 +486,12 @@
     </div>
 
     <header id="main-header">
-        <div class="menu-toggle" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars-staggered"></i></div>
+        <button type="button" class="menu-toggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="فتح قائمة التنقل"><i class="fa-solid fa-bars-staggered"></i></button>
         <div class="logo-container">
             <img src="assets/restored-ui/logo-d80a9f0ddb49.png" alt="القهوة الملكية - قهوجي جدة" loading="eager" decoding="async">
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="/">الرئيسية</a></li>
             <li><a href="men.html">رجال</a></li>
             <li><a href="women.html">نساء</a></li>
             <li><a href="zamzam.html">زمزم</a></li>
@@ -505,11 +505,11 @@
         </div>
     </header>
 
-    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <i class="fa-solid fa-xmark close-menu" onclick="toggleMobileMenu()"></i>
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="قائمة التنقل" inert>
+        <button type="button" class="close-menu" aria-label="إغلاق القائمة">×</button>
         <div class="mobile-nav-links">
-            <a href="index.html">الرئيسية</a>
+            <a href="/">الرئيسية</a>
             <a href="men.html">قهوجي رجال</a>
             <a href="women.html">صبابات نساء</a>
             <a href="zamzam.html">صبابين زمزم</a>
@@ -532,23 +532,23 @@
         <div class="hero-content">
             <span class="hero-subtitle">القهوة الملكية</span>
             <h1 class="hero-title">قهوجي جدة للمناسبات<br>صبابين قهوة ومباشرين محترفين</h1>
-            <p class="hero-text">حجز قهوجي وصبابات للقهوة العربية والشاي في الزواجات والعزاء والمناسبات. اختر مدينتك واطّلع على الباقات قبل التواصل.</p>
+            <p class="hero-text">حجز قهوجي وصبابات للقهوة العربية والشاي في الزواجات والعزاء والمناسبات. اختر مدينتك واطّلع على الباقات قبل التواصل.</p><p class="rc-hero-offer">قهوجي وصبّاب لـ٢٥–٣٠ ضيفًا بـ٦٠٠ ريال · <a href="packages.html#packages">تفاصيل الباقة</a></p>
             <a href="https://wa.me/966536895975" class="btn btn-gold" target="_blank">
                 <i class="fa-solid fa-phone"></i> احجز ضيافتك الآن
             </a>
         </div>
         <div class="hero-dots">
-            <button class="hero-dot active" onclick="goToSlide(0)"></button>
-            <button class="hero-dot" onclick="goToSlide(1)"></button>
-            <button class="hero-dot" onclick="goToSlide(2)"></button>
-            <button class="hero-dot" onclick="goToSlide(3)"></button>
+            <button class="hero-dot active" aria-label="عرض الصورة 1" aria-pressed="true"></button>
+            <button class="hero-dot" aria-label="عرض الصورة 2" aria-pressed="false"></button>
+            <button class="hero-dot" aria-label="عرض الصورة 3" aria-pressed="false"></button>
+            <button class="hero-dot" aria-label="عرض الصورة 4" aria-pressed="false"></button>
         </div>
     </section>
 
     <!-- ===== قائمة التنقل للجوال — Tab Bar ===== -->
     <nav class="mobile-nav-bar">
         <div class="mobile-nav-bar-inner">
-            <a href="index.html" class="active-page">
+            <a href="/" class="active-page">
                 <i class="fa-solid fa-house"></i>
                 الرئيسية
             </a>
@@ -579,7 +579,7 @@
     
 
     <!-- ===== شريط المميزات — مباشرة تحت بانر العيد ===== -->
-    <div class="features-white-bar">
+    <nav class="rc-links" aria-label="حجز الضيافة حسب المدينة"><strong>اختر مدينة مناسبتك</strong> <a href="jeddah.html">قهوجي جدة</a> · <a href="taif.html">قهوجي الطائف</a> · <a href="riyadh.html">قهوجي الرياض</a> · <a href="makkah.html">قهوجي مكة المكرمة</a> · <a href="turaba.html">قهوجي تربة</a> · <a href="dammam.html">قهوجي الدمام</a> · <a href="madinah.html">قهوجي المدينة المنورة</a></nav><div class="features-white-bar">
         <div class="feature-box">
             <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
             <div class="feature-text">
@@ -649,32 +649,32 @@
                     <span class="stat-label">مناسبة شهرياً</span>
                 </div>
                 <!-- نسخة مكررة -->
-                <div class="stat-item">
+                <div class="stat-item" aria-hidden="true">
                     <i class="fa-solid fa-users-viewfinder"></i>
                     <span class="stat-number">+6500</span>
                     <span class="stat-label">عميل سعيد يثق بنا</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" aria-hidden="true">
                     <i class="fa-solid fa-mug-hot"></i>
                     <span class="stat-number">+50</span>
                     <span class="stat-label">نوع من التقديمات الفاخرة</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" aria-hidden="true">
                     <i class="fa-solid fa-map-location-dot"></i>
                     <span class="stat-number" style="font-size:13px;">الرياض·جدة·مكة<br>الدمام·الطائف·تربة</span>
                     <span class="stat-label">مناطق نغطيها</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" aria-hidden="true">
                     <i class="fa-solid fa-calendar-check"></i>
                     <span class="stat-number">10</span>
                     <span class="stat-label">سنوات من الخبرة والريادة</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" aria-hidden="true">
                     <i class="fa-solid fa-star"></i>
                     <span class="stat-number">5 ★</span>
                     <span class="stat-label">تقييم العملاء</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item" aria-hidden="true">
                     <i class="fa-solid fa-handshake"></i>
                     <span class="stat-number">+300</span>
                     <span class="stat-label">مناسبة شهرياً</span>
@@ -702,17 +702,17 @@
                 <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/a6dd873bc2367896.webp" alt="جرير" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">جرير</span></div></div>
                 <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/6faf6660f728c009.webp" alt="جاهز" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">جاهز</span></div></div>
                 <!-- نسخة مكررة للحركة اللانهائية -->
-                <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/64227cf346d0e06f.webp" alt="أرامكو" width="300" height="168" loading="lazy" decoding="async"><span class="partner-name">أرامكو</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/c6a68525505e1533.webp" alt="STC" width="318" height="159" loading="lazy" decoding="async"><span class="partner-name">STC</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-name">سابك</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/aa6f684e3ab09227.webp" alt="المراعي" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">المراعي</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/190198304530ee5a.webp" alt="الراجحي" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">مصرف الراجحي</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/27fdfa4c3992516d.webp" alt="موبايلي" width="281" height="180" loading="lazy" decoding="async"><span class="partner-name">موبايلي</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-name">زين السعودية</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/2e76319b048201e0.webp" alt="نيوم" width="284" height="177" loading="lazy" decoding="async"><span class="partner-name">نيوم</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-name">أكوا باور</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/a6dd873bc2367896.webp" alt="جرير" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">جرير</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/6faf6660f728c009.webp" alt="جاهز" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">جاهز</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/64227cf346d0e06f.webp" alt="أرامكو" width="300" height="168" loading="lazy" decoding="async"><span class="partner-name">أرامكو</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/c6a68525505e1533.webp" alt="STC" width="318" height="159" loading="lazy" decoding="async"><span class="partner-name">STC</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-name">سابك</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/aa6f684e3ab09227.webp" alt="المراعي" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">المراعي</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/190198304530ee5a.webp" alt="الراجحي" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">مصرف الراجحي</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/27fdfa4c3992516d.webp" alt="موبايلي" width="281" height="180" loading="lazy" decoding="async"><span class="partner-name">موبايلي</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-name">زين السعودية</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/2e76319b048201e0.webp" alt="نيوم" width="284" height="177" loading="lazy" decoding="async"><span class="partner-name">نيوم</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-name">أكوا باور</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/a6dd873bc2367896.webp" alt="جرير" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">جرير</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><img class="partner-logo" src="assets/original-images/6faf6660f728c009.webp" alt="جاهز" width="225" height="225" loading="lazy" decoding="async"><span class="partner-name">جاهز</span></div></div>
                 </div>
         </div>
 
@@ -732,57 +732,57 @@
                 <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">📋</span><span class="partner-name">اجتماعات الأعمال</span></div></div>
                 <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🐑</span><span class="partner-name">ضيافة الذبائح والولائم</span></div></div>
                 <!-- نسخة مكررة -->
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">💍</span><span class="partner-name">حفلات الزواج والأفراح</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🕯️</span><span class="partner-name">مجالس العزاء والتأبين</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">👶</span><span class="partner-name">حفلات المواليد والعقيقة</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🏡</span><span class="partner-name">الديوانيات والسمرات</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🎂</span><span class="partner-name">أعياد الميلاد والتكريم</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🌙</span><span class="partner-name">سهرات رمضان والعيد</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">📋</span><span class="partner-name">اجتماعات الأعمال</span></div></div>
-                <div class="partner-item"><div class="partner-item-inner"><span class="partner-emoji">🐑</span><span class="partner-name">ضيافة الذبائح والولائم</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-emoji">💍</span><span class="partner-name">حفلات الزواج والأفراح</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-emoji">🕯️</span><span class="partner-name">مجالس العزاء والتأبين</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-emoji">👶</span><span class="partner-name">حفلات المواليد والعقيقة</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-emoji">🏡</span><span class="partner-name">الديوانيات والسمرات</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-emoji">🎂</span><span class="partner-name">أعياد الميلاد والتكريم</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-emoji">🌙</span><span class="partner-name">سهرات رمضان والعيد</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-emoji">📋</span><span class="partner-name">اجتماعات الأعمال</span></div></div>
+                <div class="partner-item" aria-hidden="true"><div class="partner-item-inner"><span class="partner-emoji">🐑</span><span class="partner-name">ضيافة الذبائح والولائم</span></div></div>
             </div>
         </div>
     </section>
 
     <!-- ===== Main Content ===== -->
-    <div class="container section-padding"><nav class="locations-bar" aria-label="حجز الضيافة حسب المدينة"><strong>اختر مدينة مناسبتك</strong> <a href="jeddah.html">قهوجي جدة</a> · <a href="taif.html">قهوجي الطائف</a> · <a href="riyadh.html">قهوجي الرياض</a> · <a href="makkah.html">قهوجي مكة المكرمة</a> · <a href="turaba.html">قهوجي تربة</a> · <a href="dammam.html">قهوجي الدمام</a> · <a href="madinah.html">قهوجي المدينة المنورة</a></nav>
+    <div class="container section-padding">
 
         <div class="services-grid">
             <div class="service-card">
                 <img src="assets/original-images/012456627ca36f12.webp" alt="قهوجي رجال بجدة" width="1280" height="853" loading="lazy" decoding="async">
                 <h3>خدمات الرجال</h3>
                 <p>قهوجي جدة وصبابين بزي رسمي فاخر للمناسبات والزواجات.</p>
-                <div class="card-footer"><a href="men.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="men.html" class="view-btn">تفاصيل ضيافة الرجال</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/b934b5eb8965c46e.webp" alt="صبابات نساء بجدة" width="450" height="800" loading="lazy" decoding="async">
                 <h3>خدمات النساء</h3>
                 <p>مباشرات وصبابات محترفات بخصوصية تامة.</p>
-                <div class="card-footer"><a href="women.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="women.html" class="view-btn">تفاصيل الضيافة النسائية</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/a8e66e78586730b1.webp" alt="صبابين ماء زمزم" width="533" height="800" loading="lazy" decoding="async">
                 <h3>صبابين زمزم</h3>
                 <p>خدمة سقاية ماء زمزم مبردة ومعقمة.</p>
-                <div class="card-footer"><a href="zamzam.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="zamzam.html" class="view-btn">تفاصيل سقاية زمزم</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/9e2efe25c74bbd7a.webp" alt="مداخل وأكلات شعبية جدة" width="1280" height="960" loading="lazy" decoding="async">
                 <h3>المداخل والأكلات</h3>
                 <p>بوفيه ومداخل شعبية تنسق بأسلوب راقي.</p>
-                <div class="card-footer"><a href="popular-food.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="popular-food.html" class="view-btn">تفاصيل الأكلات الشعبية</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/21b1bcef3abf6bf0.webp" alt="قائمة تقديمات الضيافة" width="600" height="800" loading="lazy" decoding="async">
                 <h3>التقديمات</h3>
                 <p>تشكيلة حلى وقهوة وشاي فاخر ومكسرات.</p>
-                <div class="card-footer"><a href="menu.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="menu.html" class="view-btn">تفاصيل التقديمات</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/c87f815fe131fc75.webp" alt="تأجير عدة ضيافة جدة" width="1170" height="1166" loading="lazy" decoding="async">
                 <h3>العدة واللوازم</h3>
                 <p>تأجير مستلزمات الضيافة الملكية ودلال.</p>
-                <div class="card-footer"><a href="equipment.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="equipment.html" class="view-btn">تفاصيل عدة الضيافة</a></div>
             </div>
         </div>
 
@@ -807,22 +807,10 @@
 
         <section class="rp-section" id="packages" data-packages><div class="rp-heading"><h2>باقات الضيافة والأسعار</h2><p>قارن المحتويات وعدد الضيوف، وتواصل معنا لتأكيد التوفر وتفاصيل الحجز.</p></div><div class="rp-grid"><article class="rp-card" id="men-1" data-category="men"><p class="rp-type">الضيافة الرجالية</p><h3>باقة الرجال 1</h3><p class="rp-price"><strong dir="ltr">600</strong> ريال سعودي</p><p class="rp-guests">من 25 إلى 30 شخصًا</p><ul class="rp-items"><li>قهوجي + صباب واحد</li><li>جميع أغراض الضيافة وعدتها</li><li>قهوة ملكية سعودية</li><li>شاي أحمر</li><li>شاي نعناع طائفي</li><li>زنجبيل بالأناناس</li></ul><p class="rp-notes">التقديمات والمشروبات الباردة حسب الطلب برسوم إضافية، ولا يشملها سعر الباقة.</p><a class="rp-button" href="https://wa.me/966536895975?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85+%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C+%D8%A3%D8%B1%D8%BA%D8%A8+%D9%81%D9%8A+%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1+%D8%B9%D9%86+%D8%A8%D8%A7%D9%82%D8%A9+%D8%A7%D9%84%D8%B6%D9%8A%D8%A7%D9%81%D8%A9+%D8%A7%D9%84%D8%B1%D8%AC%D8%A7%D9%84%D9%8A%D8%A9+%D8%B1%D9%82%D9%85+1+%D8%A8%D8%B3%D8%B9%D8%B1+600+%D8%B1%D9%8A%D8%A7%D9%84%D8%8C+%D9%88%D8%AA%D8%A3%D9%83%D9%8A%D8%AF+%D8%A7%D9%84%D8%AA%D9%88%D9%81%D8%B1+%D9%88%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84+%D8%A7%D9%84%D8%AD%D8%AC%D8%B2+%D9%88%D8%A7%D9%84%D8%B3%D8%B9%D8%B1+%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A.">استفسر عن هذه الباقة</a></article><article class="rp-card" id="women-1" data-category="women"><p class="rp-type">الضيافة النسائية</p><h3>باقة النساء 1</h3><p class="rp-price"><strong dir="ltr">700</strong> ريال سعودي</p><p class="rp-guests">من 15 إلى 20 شخصًا</p><ul class="rp-items"><li>قهوجية + صبابة</li><li>جميع أغراض الضيافة وعدتها</li><li>قهوة ملكية سعودية</li><li>شاي أحمر</li><li>شاي نعناع طائفي</li><li>زنجبيل بالأناناس</li></ul><details class="rp-details"><summary>عرض بقية المحتويات</summary><ul class="rp-items"><li>قهوة تركية</li><li>كابتشينو</li></ul></details><p class="rp-notes">التقديمات والمشروبات الباردة حسب الطلب برسوم إضافية، ولا يشملها سعر الباقة.</p><a class="rp-button" href="https://wa.me/966536895975?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85+%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C+%D8%A3%D8%B1%D8%BA%D8%A8+%D9%81%D9%8A+%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1+%D8%B9%D9%86+%D8%A8%D8%A7%D9%82%D8%A9+%D8%A7%D9%84%D8%B6%D9%8A%D8%A7%D9%81%D8%A9+%D8%A7%D9%84%D9%86%D8%B3%D8%A7%D8%A6%D9%8A%D8%A9+%D8%B1%D9%82%D9%85+1+%D8%A8%D8%B3%D8%B9%D8%B1+700+%D8%B1%D9%8A%D8%A7%D9%84%D8%8C+%D9%88%D8%AA%D8%A3%D9%83%D9%8A%D8%AF+%D8%A7%D9%84%D8%AA%D9%88%D9%81%D8%B1+%D9%88%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84+%D8%A7%D9%84%D8%AD%D8%AC%D8%B2+%D9%88%D8%A7%D9%84%D8%B3%D8%B9%D8%B1+%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A.">استفسر عن هذه الباقة</a></article><article class="rp-card" id="food-1" data-category="food"><p class="rp-type">الأكلات الشعبية</p><h3>باقة الأكلات 1</h3><p class="rp-price"><strong dir="ltr">3,750</strong> ريال سعودي</p><p class="rp-guests">يُحدد عدد الضيوف عند الحجز</p><ul class="rp-items"><li>2 مباشرين</li><li>7 سخانات</li><li>عريكة</li><li>عصيدة</li><li>مشغوثة</li><li>جريش</li></ul><details class="rp-details"><summary>عرض بقية المحتويات</summary><ul class="rp-items"><li>حنيني</li><li>فتة تمر</li><li>فتة دخن</li><li>خبز ملة كبير</li><li>ميني ملة</li><li>صحن مراصيع</li><li>مجسم تمر بتصميم السيفين والنخلة</li><li>كيلو سمن</li><li>كيلو عسل</li><li>القهوة العربية</li><li>الشاي الأحمر</li><li>شاي نعناع طائفي</li><li>شاي كرك</li><li>شاي الزنجبيل بالأناناس</li></ul></details><p class="rp-notes">يُحدد عدد الضيوف المناسب عند الحجز.</p><a class="rp-button" href="https://wa.me/966536895975?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85+%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C+%D8%A3%D8%B1%D8%BA%D8%A8+%D9%81%D9%8A+%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1+%D8%B9%D9%86+%D8%A8%D8%A7%D9%82%D8%A9+%D8%A7%D9%84%D8%A3%D9%83%D9%84%D8%A7%D8%AA+%D8%A7%D9%84%D8%B4%D8%B9%D8%A8%D9%8A%D8%A9+%D8%B1%D9%82%D9%85+1+%D8%A8%D8%B3%D8%B9%D8%B1+3750+%D8%B1%D9%8A%D8%A7%D9%84%D8%8C+%D9%88%D8%AA%D8%A3%D9%83%D9%8A%D8%AF+%D8%A7%D9%84%D8%AA%D9%88%D9%81%D8%B1+%D9%88%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84+%D8%A7%D9%84%D8%AD%D8%AC%D8%B2+%D9%88%D8%A7%D9%84%D8%B3%D8%B9%D8%B1+%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A.">استفسر عن هذه الباقة</a></article></div><p class="rp-notes" style="text-align:center;margin-top:22px">الأسعار بالريال السعودي. يُؤكد السعر النهائي حسب المدينة وتفاصيل المناسبة والإضافات قبل الحجز.</p><p style="text-align:center;margin-top:25px"><a class="rp-link" href="packages.html">استعرض جميع الباقات والأسعار</a></p></section><section class="faq-section">
             <h2><i class="fa-solid fa-circle-question" style="color: var(--gold-color);"></i> الأسئلة الشائعة حول خدمات قهوجي جدة والقهوة الملكية</h2>
-            <div class="faq-item">
-                <h3>ما هي أسعار القهوجيين والصبابين؟</h3>
-                <p>تختلف الأسعار بناءً على عدد الضيوف ومدة المناسبة، ولكننا في القهوة الملكية نقدم أسعاراً تنافسية في جميع المناطق مع الحفاظ على أعلى مستويات الجودة والاحترافية.</p>
-            </div>
-            <div class="faq-item">
-                <h3>هل توفرون قهوجيات صبابات للمناسبات النسائية؟</h3>
-                <p>نعم، نوفر طاقم نسائي متكامل من القهوجيات والصبابات والمباشرات المحترفات بزي رسمي وأنيق، مع ضمان تام للخصوصية في جميع القاعات والمنازل.</p>
-            </div>
-            <div class="faq-item">
-                <h3>في أي مدن ومناطق تخدمون؟</h3>
-                <p>بالتأكيد، نخدمكم في جميع مدن ومناطق المملكة ومنها الرياض، جدة، مكة المكرمة، الدمام، الطائف، تربة، ونصل إليكم في أسرع وقت ممكن.</p>
-            </div>
-            <div class="faq-item">
-                <h3>ما هي المشروبات التي يقدمها صبابين القهوة الملكية؟</h3>
-                <p>نقدم القهوة العربية الأصيلة، الشاي بأنواعه (أحمر، أخضر، نعناع)، الزنجبيل، القشر، بالإضافة إلى البخور والعود الملكي حسب الطلب.</p>
-            </div>
+            <details class="faq-item"><summary>ما هي أسعار القهوجيين والصبابين؟</summary><p>تختلف الأسعار بناءً على عدد الضيوف ومدة المناسبة، ولكننا في القهوة الملكية نقدم أسعاراً تنافسية في جميع المناطق مع الحفاظ على أعلى مستويات الجودة والاحترافية.</p></details>
+            <details class="faq-item"><summary>هل توفرون قهوجيات صبابات للمناسبات النسائية؟</summary><p>نعم، نوفر طاقم نسائي متكامل من القهوجيات والصبابات والمباشرات المحترفات بزي رسمي وأنيق، مع ضمان تام للخصوصية في جميع القاعات والمنازل.</p></details>
+            <details class="faq-item"><summary>في أي مدن ومناطق تخدمون؟</summary><p>بالتأكيد، نخدمكم في جميع مدن ومناطق المملكة ومنها الرياض، جدة، مكة المكرمة، الدمام، الطائف، تربة، ونصل إليكم في أسرع وقت ممكن.</p></details>
+            <details class="faq-item"><summary>ما هي المشروبات التي يقدمها صبابين القهوة الملكية؟</summary><p>نقدم القهوة العربية الأصيلة، الشاي بأنواعه (أحمر، أخضر، نعناع)، الزنجبيل، القشر، بالإضافة إلى البخور والعود الملكي حسب الطلب.</p></details>
         </section>
 
         <div class="locations-bar"><strong><i class="fa-solid fa-map-location-dot"></i> مدن نخدمها:</strong> <a href="jeddah.html">جدة</a> | <a href="madinah.html">المدينة المنورة</a> | <a href="riyadh.html">الرياض</a> | <a href="makkah.html">مكة المكرمة</a> | <a href="dammam.html">الدمام</a> | <a href="taif.html">الطائف</a> | <a href="turaba.html">تربة</a></div>
@@ -842,7 +830,7 @@
     <footer>
         <p>© 2026 القهوة الملكية - جميع الحقوق محفوظة</p>
         <p class="footer-bottom-text">قهوجي جدة وأفضل خدمات الضيافة والقهوجيين في مدينة جدة</p>
-    </footer>
+    <nav class="rc-social" aria-label="حسابات التواصل"><a href="https://www.snapchat.com/add/c01off4e1?src=QR_CODE">سناب شات</a> <a href="https://www.tiktok.com/@c01off4e1">تيك توك</a> <a href="https://www.instagram.com/c01off4e1_">إنستغرام</a></nav></footer>
 <script>
         
         /* AOS removed */
@@ -851,37 +839,6 @@
             if (window.scrollY > 50) { header.classList.add('scrolled'); }
             else { header.classList.remove('scrolled'); }
         });
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileOverlay = document.getElementById('mobileOverlay');
-        function toggleMobileMenu() {
-            mobileMenu.classList.toggle('active');
-            mobileOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
-        }
-        // ===== Hero Slideshow =====
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.hero-dot');
-        let current = 0, timer;
-
-        function goToSlide(n) {
-            slides[current].classList.remove('active');
-            dots[current].classList.remove('active');
-            current = n;
-            slides[current].classList.add('active');
-            dots[current].classList.add('active');
-            clearInterval(timer);
-            timer = setInterval(nextSlide, 3500);
-        }
-
-        function nextSlide() {
-            goToSlide((current + 1) % slides.length);
-        }
-
-        timer = setInterval(nextSlide, 3500);
-        const faqItems = document.querySelectorAll('.faq-item h3');
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => { item.parentElement.classList.toggle('active'); });
-        });
-    </script>
+        </script>
 </body>
 </html>

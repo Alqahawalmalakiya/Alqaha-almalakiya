@@ -453,7 +453,7 @@
             .contact-item { font-size: 9px; }
         }
     </style>
-<link rel="stylesheet" href="assets/packages.css"><script src="assets/packages.js" defer></script></head>
+<link rel="stylesheet" href="assets/packages.css"><script src="assets/packages.js" defer></script><link rel="stylesheet" href="assets/booking-ui.css"><script src="assets/booking-ui.js" defer></script></head>
 <body>
 
     
@@ -463,19 +463,19 @@
             <img src="assets/original-images/407455fb349add00.webp" alt="اتصال" style="filter: invert(1);" width="512" height="512" loading="lazy" decoding="async">
             <span>اتصال</span>
         </a>
-        <a href="https://wa.me/966536895975" class="contact-item">
+        <a href="https://wa.me/966536895975?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D9%81%D9%8A%20%D8%AC%D8%AF%D8%A9%0A%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%3A%20%0A%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B6%D9%8A%D9%88%D9%81%3A%20" class="contact-item">
             <img src="assets/original-images/d7a79bb2bd387b46.webp" alt="واتساب" width="512" height="512" loading="lazy" decoding="async">
             <span>واتساب</span>
         </a>
-        <a href="https://www.snapchat.com/add/c01off4e1?src=QR_CODE" class="contact-item">
+        <a href="https://www.snapchat.com/add/c01off4e1?src=QR_CODE" class="contact-item rc-social-item">
             <img src="assets/original-images/8466a06737f5bf1b.webp" alt="سناب شات" width="250" height="250" loading="lazy" decoding="async">
             <span>سناب</span>
         </a>
-        <a href="https://www.tiktok.com/@c01off4e1" class="contact-item">
+        <a href="https://www.tiktok.com/@c01off4e1" class="contact-item rc-social-item">
             <img src="assets/original-images/262e78ed0873d6a8.webp" alt="تيك توك" style="filter: invert(1);" width="512" height="512" loading="lazy" decoding="async">
             <span>تيك توك</span>
         </a>
-        <a href="https://www.instagram.com/c01off4e1_" class="contact-item">
+        <a href="https://www.instagram.com/c01off4e1_" class="contact-item rc-social-item">
             <img src="assets/original-images/b283278f6bca3e59.webp" alt="انستقرام" width="512" height="512" loading="lazy" decoding="async">
             <span>انستقرام</span>
         </a>
@@ -486,37 +486,37 @@
     </div>
 
     <header id="main-header">
-        <div class="menu-toggle" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars-staggered"></i></div>
+        <button type="button" class="menu-toggle" aria-controls="mobileMenu" aria-expanded="false" aria-label="فتح قائمة التنقل"><i class="fa-solid fa-bars-staggered"></i></button>
         <div class="logo-container">
             <img src="assets/restored-ui/logo-d80a9f0ddb49.png" alt="القهوة الملكية - قهوجي جدة" loading="eager" decoding="async">
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="men.html">رجال</a></li>
-            <li><a href="women.html">نساء</a></li>
-            <li><a href="zamzam.html">زمزم</a></li>
-            <li><a href="menu.html">تقديمات</a></li>
-            <li><a href="equipment.html">العدة</a></li>
-        <li><a href="packages.html">الباقات</a></li></ul>
+            <li><a href="/">الرئيسية</a></li>
+            <li><a href="men.html?city=jeddah">رجال</a></li>
+            <li><a href="women.html?city=jeddah">نساء</a></li>
+            <li><a href="zamzam.html?city=jeddah">زمزم</a></li>
+            <li><a href="menu.html?city=jeddah">تقديمات</a></li>
+            <li><a href="equipment.html?city=jeddah">العدة</a></li>
+        <li><a href="packages.html?city=jeddah#packages">الباقات</a></li></ul>
         <div class="nav-actions">
-            <a href="https://wa.me/966536895975" class="icon-btn-gold" target="_blank">
+            <a href="https://wa.me/966536895975?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D9%81%D9%8A%20%D8%AC%D8%AF%D8%A9%0A%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%3A%20%0A%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B6%D9%8A%D9%88%D9%81%3A%20" class="icon-btn-gold" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i> اطلب الآن
             </a>
         </div>
     </header>
 
-    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <i class="fa-solid fa-xmark close-menu" onclick="toggleMobileMenu()"></i>
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="قائمة التنقل" inert>
+        <button type="button" class="close-menu" aria-label="إغلاق القائمة">×</button>
         <div class="mobile-nav-links">
-            <a href="index.html">الرئيسية</a>
-            <a href="men.html">قهوجي رجال</a>
-            <a href="women.html">صبابات نساء</a>
-            <a href="zamzam.html">صبابين زمزم</a>
-            <a href="menu.html">التقديمات</a>
-            <a href="popular-food.html">الأكلات الشعبية</a>
-            <a href="equipment.html">العدة</a>
-        <a href="packages.html">الباقات</a></div>
+            <a href="/">الرئيسية</a>
+            <a href="men.html?city=jeddah">قهوجي رجال</a>
+            <a href="women.html?city=jeddah">صبابات نساء</a>
+            <a href="zamzam.html?city=jeddah">صبابين زمزم</a>
+            <a href="menu.html?city=jeddah">التقديمات</a>
+            <a href="popular-food.html?city=jeddah">الأكلات الشعبية</a>
+            <a href="equipment.html?city=jeddah">العدة</a>
+        <a href="packages.html?city=jeddah#packages">الباقات</a></div>
     </div>
 
     <!-- ===== Hero ===== -->
@@ -533,46 +533,46 @@
             <span class="hero-subtitle">القهوة الملكية</span>
             <h1 class="hero-title">حجز قهوجي في جدة للزواجات والعزاء</h1>
             <p class="hero-text">خدمات قهوجي وصبابين وضيافة نسائية في جدة. نسّق ضيافة الزواج أو العزاء أو اللقاء العائلي بحسب الضيوف والموقع، وأكد التوفر والتفاصيل قبل الحجز.</p>
-            <a href="https://wa.me/966536895975" class="btn btn-gold" target="_blank">
+            <a href="https://wa.me/966536895975?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D9%81%D9%8A%20%D8%AC%D8%AF%D8%A9%0A%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%3A%20%0A%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B6%D9%8A%D9%88%D9%81%3A%20" class="btn btn-gold" target="_blank">
                 <i class="fa-solid fa-phone"></i> احجز ضيافتك الآن
             </a>
         </div>
         <div class="hero-dots">
-            <button class="hero-dot active" onclick="goToSlide(0)"></button>
-            <button class="hero-dot" onclick="goToSlide(1)"></button>
-            <button class="hero-dot" onclick="goToSlide(2)"></button>
-            <button class="hero-dot" onclick="goToSlide(3)"></button>
+            <button class="hero-dot active" aria-label="عرض الصورة 1" aria-pressed="true"></button>
+            <button class="hero-dot" aria-label="عرض الصورة 2" aria-pressed="false"></button>
+            <button class="hero-dot" aria-label="عرض الصورة 3" aria-pressed="false"></button>
+            <button class="hero-dot" aria-label="عرض الصورة 4" aria-pressed="false"></button>
         </div>
     </section>
 
     <!-- ===== قائمة التنقل للجوال — Tab Bar ===== -->
     <nav class="mobile-nav-bar">
         <div class="mobile-nav-bar-inner">
-            <a href="index.html" class="active-page">
+            <a href="/" class="active-page">
                 <i class="fa-solid fa-house"></i>
                 الرئيسية
             </a>
-            <a href="men.html">
+            <a href="men.html?city=jeddah">
                 <i class="fa-solid fa-user-tie"></i>
                 رجال
             </a>
-            <a href="women.html">
+            <a href="women.html?city=jeddah">
                 <i class="fa-solid fa-user"></i>
                 نساء
             </a>
-            <a href="zamzam.html">
+            <a href="zamzam.html?city=jeddah">
                 <i class="fa-solid fa-droplet"></i>
                 زمزم
             </a>
-            <a href="menu.html">
+            <a href="menu.html?city=jeddah">
                 <i class="fa-solid fa-mug-hot"></i>
                 تقديمات
             </a>
-            <a href="equipment.html">
+            <a href="equipment.html?city=jeddah">
                 <i class="fa-solid fa-box-open"></i>
                 العدة
             </a>
-        <a href="packages.html">الباقات</a></div>
+        <a href="packages.html?city=jeddah#packages">الباقات</a></div>
     </nav>
 
     <!-- ===== بانر اليوم الوطني السعودي ===== -->
@@ -617,44 +617,44 @@
     
 
     <!-- ===== Main Content ===== -->
-    <div class="container section-padding"><article class="seo-box"><h2>كم سعر قهوجي وصباب في جدة؟</h2><p>تضم باقة الرجال الأولى قهوجيًا وصبابًا واحدًا لخدمة 25 إلى 30 ضيفًا بسعر 600 ريال. أما باقة 30 إلى 55 ضيفًا فتضم قهوجيًا وصبابين بسعر 900 ريال. التقديمات والمشروبات الباردة حسب الطلب برسوم إضافية.</p><p><a href="packages.html">قارن أسعار الباقات ومحتوياتها</a></p><h2>قهوجي وصبابين للمناسبات في جدة</h2><p>تبدأ الضيافة المناسبة بمعرفة طريقة استقبال ضيوفكم. في جدة، يمكنكم التواصل مع القهوة الملكية لترتيب خدمة الرجال أو الضيافة النسائية للزواجات والعزاء واللقاءات العائلية. وضحوا عدد الحضور وموعد المناسبة ومكانها، ثم اتفقوا على تفاصيل الخدمة بعد تأكيد التوفر.</p><h2>توزيع الضيافة بين قسمي المناسبة</h2><p>إذا كانت المناسبة تضم قسمًا للرجال وآخر للنساء، أرسلوا العدد التقريبي لكل قسم بدل العدد الإجمالي وحده. بيّنوا ما إذا كان الدخول في وقت واحد أو على فترات، ومن يتولى التنسيق في كل قسم. تساعد هذه المعلومات على مناقشة عدد أفراد الطاقم وطريقة تقديم القهوة والشاي بما يلائم المناسبة، مع مراعاة الخصوصية.</p><h2>تجهيز المكان قبل استقبال الضيوف</h2><p>في المنزل أو القاعة أو الاستراحة، حددوا مساحة تجهيز المشروبات ومسار الخدمة بين الطاولات أو المجالس. أخبرونا إن كان المكان في دور علوي أو يحتاج إلى تنسيق للدخول والتفريغ. وضحوا أيضًا ما يتوفر لديكم من دلال وفناجين وطاولات حتى يتحدد ما يحتاج إلى تجهيز إضافي ضمن الاتفاق.</p><h2>اتفاق واضح للزواج أو العزاء أو اللقاء العائلي</h2><p>لكل مناسبة ترتيبها: قد يرتبط الزواج ببرنامج محدد، بينما يحتاج استقبال العزاء إلى معرفة فترات حضور الضيوف، ويختلف اللقاء العائلي بحسب مساحة المجلس. شاركوا برنامجكم والمدة المطلوبة وأي طلبات تخص التقديمات، واطلبوا ملخصًا يوضح الخدمة والعدد والوقت والتكلفة المتفق عليها قبل تأكيد الحجز.</p></article>
+    <div class="container section-padding"><article class="seo-box"><h2>كم سعر قهوجي وصباب في جدة؟</h2><p>تضم باقة الرجال الأولى قهوجيًا وصبابًا واحدًا لخدمة 25 إلى 30 ضيفًا بسعر 600 ريال. أما باقة 30 إلى 55 ضيفًا فتضم قهوجيًا وصبابين بسعر 900 ريال. التقديمات والمشروبات الباردة حسب الطلب برسوم إضافية.</p><p><a href="packages.html?city=jeddah#packages">قارن أسعار الباقات ومحتوياتها</a></p><h2>قهوجي وصبابين للمناسبات في جدة</h2><p>تبدأ الضيافة المناسبة بمعرفة طريقة استقبال ضيوفكم. في جدة، يمكنكم التواصل مع القهوة الملكية لترتيب خدمة الرجال أو الضيافة النسائية للزواجات والعزاء واللقاءات العائلية. وضحوا عدد الحضور وموعد المناسبة ومكانها، ثم اتفقوا على تفاصيل الخدمة بعد تأكيد التوفر.</p><h2>توزيع الضيافة بين قسمي المناسبة</h2><p>إذا كانت المناسبة تضم قسمًا للرجال وآخر للنساء، أرسلوا العدد التقريبي لكل قسم بدل العدد الإجمالي وحده. بيّنوا ما إذا كان الدخول في وقت واحد أو على فترات، ومن يتولى التنسيق في كل قسم. تساعد هذه المعلومات على مناقشة عدد أفراد الطاقم وطريقة تقديم القهوة والشاي بما يلائم المناسبة، مع مراعاة الخصوصية.</p><h2>تجهيز المكان قبل استقبال الضيوف</h2><p>في المنزل أو القاعة أو الاستراحة، حددوا مساحة تجهيز المشروبات ومسار الخدمة بين الطاولات أو المجالس. أخبرونا إن كان المكان في دور علوي أو يحتاج إلى تنسيق للدخول والتفريغ. وضحوا أيضًا ما يتوفر لديكم من دلال وفناجين وطاولات حتى يتحدد ما يحتاج إلى تجهيز إضافي ضمن الاتفاق.</p><h2>اتفاق واضح للزواج أو العزاء أو اللقاء العائلي</h2><p>لكل مناسبة ترتيبها: قد يرتبط الزواج ببرنامج محدد، بينما يحتاج استقبال العزاء إلى معرفة فترات حضور الضيوف، ويختلف اللقاء العائلي بحسب مساحة المجلس. شاركوا برنامجكم والمدة المطلوبة وأي طلبات تخص التقديمات، واطلبوا ملخصًا يوضح الخدمة والعدد والوقت والتكلفة المتفق عليها قبل تأكيد الحجز.</p></article>
 
         <div class="services-grid">
             <div class="service-card">
                 <img src="assets/original-images/012456627ca36f12.webp" alt="قهوجي رجال بجدة" width="1280" height="853" loading="lazy" decoding="async">
                 <h3>خدمات الرجال</h3>
                 <p>صبابين بزي رسمي فاخر للمناسبات والزواجات.</p>
-                <div class="card-footer"><a href="men.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="men.html?city=jeddah" class="view-btn">تفاصيل ضيافة الرجال</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/b934b5eb8965c46e.webp" alt="صبابات نساء بجدة" width="450" height="800" loading="lazy" decoding="async">
                 <h3>خدمات النساء</h3>
                 <p>مباشرات وصبابات محترفات بخصوصية تامة.</p>
-                <div class="card-footer"><a href="women.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="women.html?city=jeddah" class="view-btn">تفاصيل الضيافة النسائية</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/a8e66e78586730b1.webp" alt="صبابين ماء زمزم" width="533" height="800" loading="lazy" decoding="async">
                 <h3>صبابين زمزم</h3>
                 <p>خدمة سقاية ماء زمزم مبردة ومعقمة.</p>
-                <div class="card-footer"><a href="zamzam.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="zamzam.html?city=jeddah" class="view-btn">تفاصيل سقاية زمزم</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/9e2efe25c74bbd7a.webp" alt="مداخل وأكلات شعبية جدة" width="1280" height="960" loading="lazy" decoding="async">
                 <h3>المداخل والأكلات</h3>
                 <p>بوفيه ومداخل شعبية تنسق بأسلوب راقي.</p>
-                <div class="card-footer"><a href="popular-food.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="popular-food.html?city=jeddah" class="view-btn">تفاصيل الأكلات الشعبية</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/21b1bcef3abf6bf0.webp" alt="قائمة تقديمات الضيافة" width="600" height="800" loading="lazy" decoding="async">
                 <h3>التقديمات</h3>
                 <p>تشكيلة حلى وقهوة وشاي فاخر ومكسرات.</p>
-                <div class="card-footer"><a href="menu.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="menu.html?city=jeddah" class="view-btn">تفاصيل التقديمات</a></div>
             </div>
             <div class="service-card">
                 <img src="assets/original-images/c87f815fe131fc75.webp" alt="تأجير عدة ضيافة جدة" width="1170" height="1166" loading="lazy" decoding="async">
                 <h3>العدة واللوازم</h3>
                 <p>تأجير مستلزمات الضيافة الملكية ودلال.</p>
-                <div class="card-footer"><a href="equipment.html" class="view-btn">التفاصيل</a></div>
+                <div class="card-footer"><a href="equipment.html?city=jeddah" class="view-btn">تفاصيل عدة الضيافة</a></div>
             </div>
         </div>
 
@@ -677,18 +677,18 @@
             </div>
         </section>
 
-        <section class="faq-section"><h2><i class="fa-solid fa-circle-question" style="color: var(--gold-color);"></i> أسئلة حجز الضيافة في جدة</h2><div class="faq-item"><h3>ما المعلومات المطلوبة لحجز قهوجي في جدة؟</h3><p>أرسلوا تاريخ المناسبة، الحي ورابط الموقع، نوع المناسبة، عدد الضيوف المتوقع، ووقت بداية الخدمة ونهايتها. أضيفوا عدد الأقسام وما يتوفر لديكم من عدة أو تقديمات، ثم انتظروا تأكيد التوفر والتفاصيل.</p></div><div class="faq-item"><h3>هل يمكن تنسيق ضيافة الرجال والنساء للحدث نفسه؟</h3><p>يمكنكم طلب تنسيق الخدمتين عند الاستفسار. حددوا العدد في كل قسم واحتياجات الخصوصية، ويُؤكد توفر الطاقم ونطاق كل خدمة قبل الحجز.</p></div><div class="faq-item"><h3>كيف أعرف ما يشمله الاتفاق؟</h3><p>اطلبوا توضيح عدد أفراد الطاقم، ساعات الخدمة، المشروبات والتقديمات، والعدة المطلوبة. لا تفترضوا أن أي تجهيز أو صنف إضافي مشمول ما لم يُذكر في ملخص الحجز.</p></div></section>
+        <section class="faq-section"><h2><i class="fa-solid fa-circle-question" style="color: var(--gold-color);"></i> أسئلة حجز الضيافة في جدة</h2><details class="faq-item"><summary>ما المعلومات المطلوبة لحجز قهوجي في جدة؟</summary><p>أرسلوا تاريخ المناسبة، الحي ورابط الموقع، نوع المناسبة، عدد الضيوف المتوقع، ووقت بداية الخدمة ونهايتها. أضيفوا عدد الأقسام وما يتوفر لديكم من عدة أو تقديمات، ثم انتظروا تأكيد التوفر والتفاصيل.</p></details><details class="faq-item"><summary>هل يمكن تنسيق ضيافة الرجال والنساء للحدث نفسه؟</summary><p>يمكنكم طلب تنسيق الخدمتين عند الاستفسار. حددوا العدد في كل قسم واحتياجات الخصوصية، ويُؤكد توفر الطاقم ونطاق كل خدمة قبل الحجز.</p></details><details class="faq-item"><summary>كيف أعرف ما يشمله الاتفاق؟</summary><p>اطلبوا توضيح عدد أفراد الطاقم، ساعات الخدمة، المشروبات والتقديمات، والعدة المطلوبة. لا تفترضوا أن أي تجهيز أو صنف إضافي مشمول ما لم يُذكر في ملخص الحجز.</p></details></section>
 
         <div class="locations-bar"><strong><i class="fa-solid fa-map-location-dot"></i> مدن نخدمها:</strong> <a href="jeddah.html">جدة</a> | <a href="madinah.html">المدينة المنورة</a> | <a href="riyadh.html">الرياض</a> | <a href="makkah.html">مكة المكرمة</a> | <a href="dammam.html">الدمام</a> | <a href="taif.html">الطائف</a> | <a href="turaba.html">تربة</a></div>
 
         
 
-        <section class="seo-box"><h2>حجز قهوجي في جدة للزواجات والعزاء</h2><p>تحتاج قهوجي جده لمناسبة في البيت أو القاعة؟ عند طلب السعر على واتساب، اذكر الحي وعدد المجالس ووقت وصول أول ضيف. إذا كان استقبال الرجال يبدأ بعد صلاة المغرب واستقبال النساء بعد العشاء مثلًا، اذكر الموعدين حتى تحصل على عرض يناسب كل قسم.</p><p><a href="men.html">صبابين القهوة لمجلس الرجال</a> • <a href="women.html">صبابات القهوة للقسم النسائي</a></p></section>
+        <section class="seo-box"><h2>حجز قهوجي في جدة للزواجات والعزاء</h2><p>تحتاج قهوجي جده لمناسبة في البيت أو القاعة؟ عند طلب السعر على واتساب، اذكر الحي وعدد المجالس ووقت وصول أول ضيف. إذا كان استقبال الرجال يبدأ بعد صلاة المغرب واستقبال النساء بعد العشاء مثلًا، اذكر الموعدين حتى تحصل على عرض يناسب كل قسم.</p><p><a href="men.html?city=jeddah">صبابين القهوة لمجلس الرجال</a> • <a href="women.html?city=jeddah">صبابات القهوة للقسم النسائي</a></p></section>
 <section class="contact-cta">
             <h2>احجز ضيافتك الآن مع القهوة الملكية</h2>
             <p>اتصل بنا للحصول على أفضل سعر لخدمات القهوجيين في جدة</p>
             <div class="phone-number" dir="ltr">+966 53 689 5975</div>
-            <a href="https://wa.me/966536895975" class="contact-btn" target="_blank">
+            <a href="https://wa.me/966536895975?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D8%B6%D9%8A%D8%A7%D9%81%D8%A9%20%D9%81%D9%8A%20%D8%AC%D8%AF%D8%A9%0A%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%3A%20%0A%D8%B9%D8%AF%D8%AF%20%D8%A7%D9%84%D8%B6%D9%8A%D9%88%D9%81%3A%20" class="contact-btn" target="_blank">
                 <i class="fa-brands fa-whatsapp fa-lg"></i> اطلب الخدمة الآن عبر واتساب
             </a>
         </section>
@@ -697,7 +697,7 @@
     <footer>
         <p>© 2026 القهوة الملكية - جميع الحقوق محفوظة</p>
         <p class="footer-bottom-text">أفضل خدمات الضيافة والقهوجيين في مدينة جدة</p>
-    </footer>
+    <nav class="rc-social" aria-label="حسابات التواصل"><a href="https://www.snapchat.com/add/c01off4e1?src=QR_CODE">سناب شات</a> <a href="https://www.tiktok.com/@c01off4e1">تيك توك</a> <a href="https://www.instagram.com/c01off4e1_">إنستغرام</a></nav></footer>
 <script>
         
         /* AOS removed */
@@ -706,37 +706,6 @@
             if (window.scrollY > 50) { header.classList.add('scrolled'); }
             else { header.classList.remove('scrolled'); }
         });
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileOverlay = document.getElementById('mobileOverlay');
-        function toggleMobileMenu() {
-            mobileMenu.classList.toggle('active');
-            mobileOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
-        }
-        // ===== Hero Slideshow =====
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.hero-dot');
-        let current = 0, timer;
-
-        function goToSlide(n) {
-            slides[current].classList.remove('active');
-            dots[current].classList.remove('active');
-            current = n;
-            slides[current].classList.add('active');
-            dots[current].classList.add('active');
-            clearInterval(timer);
-            timer = setInterval(nextSlide, 3500);
-        }
-
-        function nextSlide() {
-            goToSlide((current + 1) % slides.length);
-        }
-
-        timer = setInterval(nextSlide, 3500);
-        const faqItems = document.querySelectorAll('.faq-item h3');
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => { item.parentElement.classList.toggle('active'); });
-        });
-    </script>
+        </script>
 </body>
 </html>
